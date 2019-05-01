@@ -1,6 +1,7 @@
 package gui;
 
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 
@@ -14,7 +15,6 @@ public class ControlPane extends BorderPane {
 	public ControlPane() {
 		
 		this.setPadding(new Insets(10));
-		this.setPrefSize(160, 160);
 		upButton = new ArrowButton(UP);
 		downButton = new ArrowButton(DOWN);
 		leftButton = new ArrowButton(LEFT);
@@ -23,7 +23,10 @@ public class ControlPane extends BorderPane {
 		this.setLeft(leftButton);
 		this.setRight(rightButton);
 		this.setBottom(downButton);
-		
+		this.setAlignment(upButton, Pos.CENTER);
+		this.setAlignment(downButton, Pos.CENTER);
+		this.setAlignment(leftButton, Pos.CENTER);
+		this.setAlignment(rightButton, Pos.CENTER);
 	}
 	public Button getUpButton() {
 		return upButton;

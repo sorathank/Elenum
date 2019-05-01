@@ -19,6 +19,7 @@ public class ArrowButton extends Button {
 
 	public ArrowButton(String direction) {
 		this.setPadding(new Insets(5));
+		this.setMaxSize(1, 1);
 		setBorder(new Border(
 				new BorderStroke(Color.GRAY, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 		this.arrowDirection = direction;
@@ -39,6 +40,8 @@ public class ArrowButton extends Button {
 		}
 
 		ImageView icon = new ImageView(new Image(ClassLoader.getSystemResource(url).toString()));
+		icon.setScaleX(1);
+		icon.setScaleY(1);
 		this.getChildren().add(icon);
 		this.setGraphic(icon);
 	}
