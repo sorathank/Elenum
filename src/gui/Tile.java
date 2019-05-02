@@ -14,6 +14,7 @@ public class Tile extends Label {
 
 	private int value;
 	private Location location;
+	private Boolean isMerged;
 	private static final int TILE_SIZE = 65;
 	
 	public static Tile newRandomTile() {
@@ -28,6 +29,7 @@ public class Tile extends Label {
 	private Tile(int value) {
 		
 		this.value = value;
+		this.isMerged = false;
 		this.setMaxSize(TILE_SIZE, TILE_SIZE);
 		this.setMinSize(TILE_SIZE, TILE_SIZE);
 		setPrefSize(TILE_SIZE,TILE_SIZE);
@@ -41,5 +43,13 @@ public class Tile extends Label {
 	
 	public int getValue() {
 		return value;
+	}
+	
+	public void setValue(int value) {
+		this.value = value;
+	}
+
+	public Boolean getIsMerged() {
+		return isMerged;
 	}
 }
