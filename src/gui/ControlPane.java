@@ -19,6 +19,7 @@ public class ControlPane extends BorderPane {
 		downButton = new ArrowButton(DOWN);
 		leftButton = new ArrowButton(LEFT);
 		rightButton = new ArrowButton(RIGHT);
+		this.setPrefSize(320, 320);
 		this.setTop(upButton);
 		this.setLeft(leftButton);
 		this.setRight(rightButton);
