@@ -1,15 +1,11 @@
-package gui;
+package main;
 
-import java.awt.HeadlessException;
-import java.awt.Label;
-
-import com.sun.javafx.application.LauncherImpl;
-
+import gui.ControlPane;
+import gui.ScorePane;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -32,8 +28,8 @@ public class Main extends Application {
 		grid1.setPrefSize(480, 720);
 		grid2.setPrefSize(480, 720);
 		dataPane.setAlignment(Pos.TOP_CENTER);
-		dataPane.getChildren().addAll(title,scorePane,controlPane);
-		main.getChildren().addAll(grid1,dataPane,grid2);
+		dataPane.getChildren().addAll(title, scorePane, controlPane);
+		main.getChildren().addAll(grid1, dataPane, grid2);
 		Scene scene = new Scene(main);
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Elenum");
