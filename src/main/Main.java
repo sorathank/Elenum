@@ -12,6 +12,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import logic.BoardManager;
+import logic.Direction;
+import logic.Location;
 
 public class Main extends Application {
 	public void start(Stage primaryStage) {
@@ -38,6 +41,14 @@ public class Main extends Application {
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Elenum");
 		primaryStage.show();
+		
+		BoardManager boardManager = new BoardManager(boardPane);
+		boardManager.mergeTile(Direction.RIGHT);
+		boardPane.getNodeByRowColumnIndex(0, 0);
+		Location location = (Location) boardPane.getColumnList().get(0).get(0);
+		System.out.println(location.getX());
+		
+		
 		
 	}
 

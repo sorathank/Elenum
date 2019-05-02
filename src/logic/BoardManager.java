@@ -16,8 +16,10 @@ public class BoardManager {
 	public void mergeTile(Direction direction) {
 		if (!avalibleToMove(direction))
 			return;
+		System.out.println("CHECK");
 		switch (direction) {
 		case UP:
+			System.out.println("Merging");
 			for (ArrayList<Location> eachColumn : boardPane.getColumnList()) {
 				Tile lastTile = null;
 				Location lastTileLocation = null;
@@ -27,12 +29,15 @@ public class BoardManager {
 							eachTileLocation.getX()) instanceof Tile) {
 						Tile eachTile = (Tile) boardPane.getNodeByRowColumnIndex(eachTileLocation.getY(),
 								eachTileLocation.getX());
+						System.out.println("lastTile" + lastTile);
+						System.out.println("eachTile" + eachTile.toString());
 
-						if ((lastTile.getValue() == eachTile.getValue())) {
+						if ((lastTile != null) && (lastTile.getValue() == eachTile.getValue())) {
 							lastTile.setValue(lastTile.getValue() * 2);
 							boardPane.removeNodeByRowColumnIndex(eachTileLocation.getY(), eachTileLocation.getX());
 							lastTile = null;
 							lastTileLocation = null;
+							System.out.println("checkpoint2");
 
 						} else {
 							lastTile = eachTile;
@@ -55,7 +60,7 @@ public class BoardManager {
 						Tile eachTile = (Tile) boardPane.getNodeByRowColumnIndex(eachTileLocation.getY(),
 								eachTileLocation.getX());
 
-						if ((lastTile.getValue() == eachTile.getValue())) {
+						if ((lastTile != null) && (lastTile.getValue() == eachTile.getValue())) {
 							lastTile.setValue(lastTile.getValue() * 2);
 							boardPane.removeNodeByRowColumnIndex(eachTileLocation.getY(), eachTileLocation.getX());
 							lastTile = null;
@@ -81,8 +86,9 @@ public class BoardManager {
 							eachTileLocation.getX()) instanceof Tile) {
 						Tile eachTile = (Tile) boardPane.getNodeByRowColumnIndex(eachTileLocation.getY(),
 								eachTileLocation.getX());
+						System.out.println(lastTile);
 
-						if ((lastTile.getValue() == eachTile.getValue())) {
+						if ((lastTile != null) && (lastTile.getValue() == eachTile.getValue())) {
 							lastTile.setValue(lastTile.getValue() * 2);
 							boardPane.removeNodeByRowColumnIndex(eachTileLocation.getY(), eachTileLocation.getX());
 							lastTile = null;
@@ -108,7 +114,7 @@ public class BoardManager {
 						Tile eachTile = (Tile) boardPane.getNodeByRowColumnIndex(eachTileLocation.getY(),
 								eachTileLocation.getX());
 
-						if ((lastTile.getValue() == eachTile.getValue())) {
+						if ((lastTile != null) && (lastTile.getValue() == eachTile.getValue())) {
 							lastTile.setValue(lastTile.getValue() * 2);
 							boardPane.removeNodeByRowColumnIndex(eachTileLocation.getY(), eachTileLocation.getX());
 							lastTile = null;
@@ -132,22 +138,27 @@ public class BoardManager {
 
 		switch (direction) {
 		case UP:
+			System.out.println("checking");
+			int k = 0;
 			for (ArrayList<Location> eachColumn : boardPane.getColumnList()) {
 				Tile lastTile = null;
+				System.out.println(Integer.toString(k));
 				for (Location eachTileLocation : eachColumn) {
 					if (boardPane.getNodeByRowColumnIndex(eachTileLocation.getY(),
 							eachTileLocation.getX()) instanceof Tile) {
 						Tile eachTile = (Tile) boardPane.getNodeByRowColumnIndex(eachTileLocation.getY(),
 								eachTileLocation.getX());
 						
-						if ((lastTile.getValue() == eachTile.getValue())) {
+						if ((lastTile != null) && (lastTile.getValue() == eachTile.getValue())) {
+							System.out.println("can move");
 							return true;
 						}
 						lastTile = eachTile;
 						
 					}
 
-				} 
+				}
+				k++;
 			}
 			return false;
 
@@ -160,7 +171,7 @@ public class BoardManager {
 						Tile eachTile = (Tile) boardPane.getNodeByRowColumnIndex(eachTileLocation.getY(),
 								eachTileLocation.getX());
 
-						if ((lastTile.getValue() == eachTile.getValue())) {
+						if ((lastTile != null) && (lastTile.getValue() == eachTile.getValue())) {
 							return true;
 						}
 						lastTile = eachTile;
@@ -179,7 +190,7 @@ public class BoardManager {
 						Tile eachTile = (Tile) boardPane.getNodeByRowColumnIndex(eachTileLocation.getY(),
 								eachTileLocation.getX());
 
-						if ((lastTile.getValue() == eachTile.getValue())) {
+						if ((lastTile != null) && (lastTile.getValue() == eachTile.getValue())) {
 							return true;
 						}
 						lastTile = eachTile;
@@ -197,7 +208,7 @@ public class BoardManager {
 						Tile eachTile = (Tile) boardPane.getNodeByRowColumnIndex(eachTileLocation.getY(),
 								eachTileLocation.getX());
 
-						if ((lastTile.getValue() == eachTile.getValue())) {
+						if ((lastTile != null) && (lastTile.getValue() == eachTile.getValue())) {
 							return true;
 						}
 						lastTile = eachTile;

@@ -47,9 +47,14 @@ public class Tile extends Label {
 	
 	public void setValue(int value) {
 		this.value = value;
+		this.setText(Integer.toString(value));
 	}
 
 	public Boolean getIsMerged() {
 		return isMerged;
+	}
+	
+	public String toString() {
+		return Integer.toString(this.value);
 	}
 }
