@@ -22,22 +22,23 @@ public class Main extends Application {
 		Label title = new Label("Elenum");
 		title.setFont(new Font("Blackadder ITC", 72));
 		ScorePane scorePane = new ScorePane();
-		VBox grid1 = new VBox();
-		VBox grid2 = new VBox();
+		VBox numPane = new VBox();
+		VBox elePane = new VBox();
 		VBox dataPane = new VBox();
 		ControlPane controlPane = new ControlPane();
 		BoardPane boardPane = new BoardPane();
-		grid1.setPrefSize(480, 720);
-		grid1.getChildren().add(boardPane);
-		grid1.setAlignment(Pos.CENTER);
-		grid2.setPrefSize(480, 720);
+		numPane.setPrefSize(480, 720);
+		numPane.getChildren().add(boardPane);
+		numPane.setAlignment(Pos.CENTER);
+		elePane.setPrefSize(480, 720);
 		dataPane.setAlignment(Pos.TOP_CENTER);
 		dataPane.getChildren().addAll(title, scorePane, controlPane);
-		main.getChildren().addAll(grid1, dataPane, grid2);
+		main.getChildren().addAll(numPane, dataPane, elePane);
 		Scene scene = new Scene(main);
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Elenum");
 		primaryStage.show();
+		
 	}
 
 	public static void main(String[] args) {

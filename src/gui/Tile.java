@@ -8,10 +8,12 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.Border;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import logic.Location;
 
 public class Tile extends Label {
 
 	private int value;
+	private Location location;
 	private static final int TILE_SIZE = 65;
 	
 	public static Tile newRandomTile() {
@@ -35,5 +37,9 @@ public class Tile extends Label {
 		this.setStyle("-fx-border-color: BLACK;");
 		this.setAlignment(Pos.CENTER);
 		
+	}
+	
+	public int getValue() {
+		return value;
 	}
 }
