@@ -68,7 +68,7 @@ public class BoardPane extends GridPane  {
 	    	column1.add(new Location(1,i));
 	    }
 	    for(int i=0 ; i < 4 ; i++) {
-	    	column2.add(new Location(2,3));
+	    	column2.add(new Location(2,i));
 	    }
 	    for(int i=0 ; i < 4 ; i++) {
 	    	column3.add(new Location(3,i));

@@ -23,7 +23,6 @@ public class BoardManager {
 			for (ArrayList<Location> eachColumn : boardPane.getColumnList()) {
 				Tile lastTile = null;
 				Location lastTileLocation = null;
-				
 				for (Location eachTileLocation : eachColumn) {
 					if (boardPane.getNodeByRowColumnIndex(eachTileLocation.getY(),
 							eachTileLocation.getX()) instanceof Tile) {
@@ -163,8 +162,7 @@ public class BoardManager {
 				}
 				k++;
 			}
-			return false;
-
+			break;
 		case DOWN:
 			for (ArrayList<Location> eachColumn : boardPane.getColumnList()) {
 				Tile lastTile = null;
@@ -183,7 +181,7 @@ public class BoardManager {
 
 				}
 			}
-			return false;
+			break;
 		case LEFT:
 			for (ArrayList<Location> eachRow : boardPane.getRowList()) {
 				Tile lastTile = null;
@@ -201,7 +199,7 @@ public class BoardManager {
 
 				}
 			}
-			return false;
+			break;
 		case RIGHT:
 			for (ArrayList<Location> eachRow : boardPane.getRowList()) {
 				Tile lastTile = null;
@@ -219,11 +217,8 @@ public class BoardManager {
 
 				}
 			}
-			return false;
-		default:
-			return false;
-
+			break;
 		}
-
+		return false;
 	}
 }
