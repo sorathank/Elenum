@@ -35,19 +35,22 @@ public class BoardManager {
 						if ((lastTile != null) && (lastTile.getValue() == eachTile.getValue())) {
 							lastTile.setValue(lastTile.getValue() * 2);
 							boardPane.removeNodeByRowColumnIndex(eachTileLocation.getY(), eachTileLocation.getX());
+							System.out.println("23");
 							lastTile = null;
 							lastTileLocation = null;
 							System.out.println("checkpoint2");
+							
 
 						} else {
 							lastTile = eachTile;
 							lastTileLocation = eachTileLocation;
 						}
+						
 					}
 
 				}
 			}
-
+		break;
 		case DOWN:
 			for (ArrayList<Location> eachColumn : boardPane.getColumnList()) {
 				Tile lastTile = null;
@@ -74,7 +77,7 @@ public class BoardManager {
 
 				}
 			}
-			
+		break;	
 		case RIGHT:
 			for (ArrayList<Location> eachRow : boardPane.getRowList()) {
 				Tile lastTile = null;
@@ -102,7 +105,7 @@ public class BoardManager {
 
 				}
 			}
-			
+		break;
 		case LEFT:
 			for (ArrayList<Location> eachRow : boardPane.getRowList()) {
 				Tile lastTile = null;
@@ -128,7 +131,7 @@ public class BoardManager {
 
 				}
 			}
-
+		break;
 		}
 	}
 

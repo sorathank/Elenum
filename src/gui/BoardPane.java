@@ -77,7 +77,6 @@ public class BoardPane extends GridPane  {
 	    rowList = new ArrayList<ArrayList>();
 	    
 	    columnList.add(column0);
-	    System.out.println(column0);
 	    columnList.add(column1);
 	    columnList.add(column2);
 	    columnList.add(column3);
@@ -89,8 +88,20 @@ public class BoardPane extends GridPane  {
 
 	    Tile a1 = Tile.newTile(2);
 	    Tile a2 = Tile.newTile(2);
-	    this.add(a1, 0, 0);
-	    this.add(a2, 1, 0);
+	    Tile a3 = Tile.newTile(2);
+	    Tile a4 = Tile.newTile(2);
+	    Tile a5 = Tile.newTile(2);
+	    Tile a6 = Tile.newTile(2);
+	    Tile a7 = Tile.newTile(2);
+	    Tile a8 = Tile.newTile(2);
+	    this.add(a1, 1, 0);
+	    this.add(a2, 1, 1);
+	    this.add(a3, 1, 2);
+	    this.add(a4, 1, 3);
+	    this.add(a5, 2, 0);
+	    this.add(a6, 2, 1);
+	    this.add(a7, 2, 2);
+	    this.add(a8, 2, 3);
 	    // get node Example //
 	    
 	    /* 
