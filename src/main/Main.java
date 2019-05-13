@@ -48,7 +48,6 @@ public class Main extends Application {
 		boardManager.move(Direction.DOWN);
 		boardManager.move(Direction.DOWN);
 		boardManager.move(Direction.UP);
-		boardManager.move(Direction.DOWN);
 		Location location = (Location) boardPane.getColumnList().get(0).get(0);
 		System.out.println(location.getX());
 		
