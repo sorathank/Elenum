@@ -44,6 +44,10 @@ public class Main extends Application {
 		
 		BoardManager boardManager = new BoardManager(boardPane);
 		boardPane.getNodeByRowColumnIndex(0, 0);
+		boardManager.move(Direction.LEFT);
+		boardManager.move(Direction.DOWN);
+		boardManager.move(Direction.DOWN);
+		boardManager.move(Direction.UP);
 		boardManager.move(Direction.DOWN);
 		Location location = (Location) boardPane.getColumnList().get(0).get(0);
 		System.out.println(location.getX());

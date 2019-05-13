@@ -252,8 +252,7 @@ public class BoardManager {
 					for (Location eachLocation : eachColumn) {
 						if (boardPane.getNodeByRowColumnIndex(eachLocation.getY(),
 								eachLocation.getX()) instanceof Tile) {
-							tile.add(
-									(Tile) boardPane.getNodeByRowColumnIndex(eachLocation.getY(), eachLocation.getX()));
+							tile.add((Tile) boardPane.getNodeByRowColumnIndex(eachLocation.getY(), eachLocation.getX()));
 							boardPane.removeNodeByRowColumnIndex(eachLocation.getY(), eachLocation.getX());
 						}
 					}
@@ -266,6 +265,30 @@ public class BoardManager {
 					}
 					columnNumber++;
 					
+				}
+			}
+			break;
+		case LEFT:
+			if (avalibleToMove(Direction.LEFT)) {
+				mergeTile(Direction.LEFT);
+				int rowNumber = 0 ;
+				for (ArrayList<Location> eachRow :boardPane.getRowList()) {
+					ArrayList<Tile> tile = new ArrayList<Tile>();
+					for (Location eachLocation : eachRow){
+						if (boardPane.getNodeByRowColumnIndex(eachLocation.getY(),
+								eachLocation.getX()) instanceof Tile) {
+							tile.add((Tile) boardPane.getNodeByRowColumnIndex(eachLocation.getY(), eachLocation.getX()));
+							boardPane.removeNodeByRowColumnIndex(eachLocation.getY(), eachLocation.getX());
+						}
+					}
+					int i = 0;
+					if (tile.size() !=0) {
+						for (Tile eachTile : tile) {
+							boardPane.add(eachTile, i, rowNumber);
+							i++;
+						}
+					}
+					rowNumber++;
 				}
 			}
 		}
