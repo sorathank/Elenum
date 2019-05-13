@@ -94,14 +94,14 @@ public class BoardPane extends GridPane  {
 	    Tile a6 = Tile.newTile(2);
 	    Tile a7 = Tile.newTile(2);
 	    Tile a8 = Tile.newTile(2);
-	    this.add(a1, 1, 0);
-	    this.add(a2, 1, 1);
-	    this.add(a3, 1, 2);
-	    this.add(a4, 1, 3);
-	    this.add(a5, 2, 0);
-	    this.add(a6, 2, 1);
-	    this.add(a7, 2, 2);
-	    this.add(a8, 2, 3);
+	    this.add(a1, 2, 0);
+	    this.add(a2, 2, 1);
+	    this.add(a3, 2, 2);
+	    this.add(a4, 2, 3);
+	    this.add(a5, 1, 0);
+	    this.add(a6, 1, 1);
+	    this.add(a7, 1, 2);
+	    this.add(a8, 1, 3);
 	    // get node Example //
 	    
 	    /* 

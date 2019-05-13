@@ -38,23 +38,22 @@ public class BoardManager {
 							lastTile = null;
 							lastTileLocation = null;
 							System.out.println("checkpoint2");
-							
 
 						} else {
 							lastTile = eachTile;
 							lastTileLocation = eachTileLocation;
 						}
-						
+
 					}
 
 				}
 			}
-		break;
+			break;
 		case DOWN:
 			for (ArrayList<Location> eachColumn : boardPane.getColumnList()) {
 				Tile lastTile = null;
 				Location lastTileLocation = null;
-				
+
 				for (int i = 3; i > -1; i--) {
 					Location eachTileLocation = eachColumn.get(i);
 					if (boardPane.getNodeByRowColumnIndex(eachTileLocation.getY(),
@@ -70,18 +69,18 @@ public class BoardManager {
 						} else {
 							lastTile = eachTile;
 							lastTileLocation = eachTileLocation;
-							
+
 						}
 					}
 
 				}
 			}
-		break;	
+			break;
 		case RIGHT:
 			for (ArrayList<Location> eachRow : boardPane.getRowList()) {
 				Tile lastTile = null;
 				Location lastTileLocation = null;
-				
+
 				for (int i = 3; i > -1; i--) {
 					Location eachTileLocation = eachRow.get(i);
 					if (boardPane.getNodeByRowColumnIndex(eachTileLocation.getY(),
@@ -98,18 +97,18 @@ public class BoardManager {
 						} else {
 							lastTile = eachTile;
 							lastTileLocation = eachTileLocation;
-							
+
 						}
 					}
 
 				}
 			}
-		break;
+			break;
 		case LEFT:
 			for (ArrayList<Location> eachRow : boardPane.getRowList()) {
 				Tile lastTile = null;
 				Location lastTileLocation = null;
-				
+
 				for (Location eachTileLocation : eachRow) {
 					if (boardPane.getNodeByRowColumnIndex(eachTileLocation.getY(),
 							eachTileLocation.getX()) instanceof Tile) {
@@ -130,37 +129,32 @@ public class BoardManager {
 
 				}
 			}
-		break;
+			break;
 		}
 	}
 
-	
-	
 	public Boolean avalibleToMove(Direction direction) {
 
 		switch (direction) {
 		case UP:
 			System.out.println("checking");
-			int k = 0;
 			for (ArrayList<Location> eachColumn : boardPane.getColumnList()) {
 				Tile lastTile = null;
-				System.out.println(Integer.toString(k));
 				for (Location eachTileLocation : eachColumn) {
 					if (boardPane.getNodeByRowColumnIndex(eachTileLocation.getY(),
 							eachTileLocation.getX()) instanceof Tile) {
 						Tile eachTile = (Tile) boardPane.getNodeByRowColumnIndex(eachTileLocation.getY(),
 								eachTileLocation.getX());
-						
+
 						if ((lastTile != null) && (lastTile.getValue() == eachTile.getValue())) {
 							System.out.println("can move");
 							return true;
 						}
 						lastTile = eachTile;
-						
+
 					}
 
 				}
-				k++;
 			}
 			break;
 		case DOWN:
@@ -176,7 +170,7 @@ public class BoardManager {
 							return true;
 						}
 						lastTile = eachTile;
-						
+
 					}
 
 				}
@@ -220,5 +214,60 @@ public class BoardManager {
 			break;
 		}
 		return false;
+	}
+
+	public void move(Direction direction) {
+		switch (direction) {
+		case UP:
+			if (avalibleToMove(Direction.UP)) {
+				mergeTile(Direction.UP);
+				int columnNumber = 0;
+				for (ArrayList<Location> eachColumn : boardPane.getColumnList()) {
+					ArrayList<Tile> tile = new ArrayList<Tile>();
+					for (Location eachLocation : eachColumn) {
+						if (boardPane.getNodeByRowColumnIndex(eachLocation.getY(),
+								eachLocation.getX()) instanceof Tile) {
+							tile.add(
+									(Tile) boardPane.getNodeByRowColumnIndex(eachLocation.getY(), eachLocation.getX()));
+							boardPane.removeNodeByRowColumnIndex(eachLocation.getY(), eachLocation.getX());
+						}
+					}
+					int i = 0;
+					if (tile.size() != 0) {
+						for (Tile eachTile : tile) {
+							boardPane.add(eachTile, columnNumber, i);
+							i++;
+						}
+					}
+					columnNumber++;
+				}
+			}
+			break;
+		case DOWN:
+			if (avalibleToMove(Direction.DOWN)) {
+				mergeTile(Direction.DOWN);
+				int columnNumber = 0;
+				for (ArrayList<Location> eachColumn : boardPane.getColumnList()) {
+					ArrayList<Tile> tile = new ArrayList<Tile>();
+					for (Location eachLocation : eachColumn) {
+						if (boardPane.getNodeByRowColumnIndex(eachLocation.getY(),
+								eachLocation.getX()) instanceof Tile) {
+							tile.add(
+									(Tile) boardPane.getNodeByRowColumnIndex(eachLocation.getY(), eachLocation.getX()));
+							boardPane.removeNodeByRowColumnIndex(eachLocation.getY(), eachLocation.getX());
+						}
+					}
+					int i = 3;
+					if (tile.size() != 0) {
+						for (Tile eachTile : tile) {
+							boardPane.add(eachTile, columnNumber, i);
+							i--;
+						}
+					}
+					columnNumber++;
+					
+				}
+			}
+		}
 	}
 }

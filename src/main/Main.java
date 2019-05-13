@@ -43,8 +43,8 @@ public class Main extends Application {
 		primaryStage.show();
 		
 		BoardManager boardManager = new BoardManager(boardPane);
-		boardManager.mergeTile(Direction.RIGHT);
 		boardPane.getNodeByRowColumnIndex(0, 0);
+		boardManager.move(Direction.DOWN);
 		Location location = (Location) boardPane.getColumnList().get(0).get(0);
 		System.out.println(location.getX());
 		
