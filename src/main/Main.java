@@ -4,12 +4,16 @@ import gui.BoardPane;
 import gui.ControlPane;
 import gui.ScorePane;
 import javafx.application.Application;
+import java.io.File;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.AudioClip;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import logic.ArrowButtonEventHandler;
@@ -26,6 +30,7 @@ public class Main extends Application {
 		main.setPadding(new Insets(10));
 		Label title = new Label("Elenum");
 		title.setFont(new Font("Blackadder ITC", 72));
+		AudioClip mainSong = new AudioClip(this.getClass().getResource("/Mission Impossible Recorder.mp3").toString());
 		ScorePane scorePane = new ScorePane();
 		VBox numPane = new VBox();
 		VBox elePane = new VBox();
@@ -43,6 +48,7 @@ public class Main extends Application {
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Elenum");
 		primaryStage.show();
+		mainSong.play();
 		
 		BoardManager boardManager = new BoardManager(boardPane);
 		
