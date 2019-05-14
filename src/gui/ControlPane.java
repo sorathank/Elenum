@@ -28,6 +28,7 @@ public class ControlPane extends BorderPane {
 		this.setAlignment(downButton, Pos.CENTER);
 		this.setAlignment(leftButton, Pos.CENTER);
 		this.setAlignment(rightButton, Pos.CENTER);
+		
 	}
 	public Button getUpButton() {
 		return upButton;

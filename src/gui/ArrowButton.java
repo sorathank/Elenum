@@ -12,29 +12,35 @@ import javafx.scene.layout.BorderStrokeStyle;
 import javafx.scene.layout.BorderWidths;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
+import logic.Direction;
 
 public class ArrowButton extends Button {
 
-	private String arrowDirection, url;
+	private String url;
+	private Direction direction;
 
 	public ArrowButton(String direction) {
 		this.setPadding(new Insets(5));
 		this.setMaxSize(1, 1);
 		setBorder(new Border(
 				new BorderStroke(Color.GRAY, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-		this.arrowDirection = direction;
-		switch (arrowDirection) {
+		
+		switch (direction) {
 		case "Up":
 			this.url = "UpArrow.png";
+			this.direction = Direction.UP;
 			break;
 		case "Down":
 			this.url = "DownArrow.png";
+			this.direction = Direction.DOWN;
 			break;
 		case "Right":
 			this.url = "RightArrow.png";
+			this.direction = Direction.RIGHT;
 			break;
 		case "Left":
 			this.url = "LeftArrow.png";
+			this.direction = Direction.LEFT;
 			break;
 
 		}
@@ -59,4 +65,6 @@ public class ArrowButton extends Button {
 		// TODO Changes Background fill
 		this.setBackground(new Background(new BackgroundFill(Color.GRAY, null, null)));
 	}
+	
+	
 }

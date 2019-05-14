@@ -12,11 +12,13 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import logic.ArrowButtonEventHandler;
 import logic.BoardManager;
 import logic.Direction;
 import logic.Location;
 
 public class Main extends Application {
+	
 	public void start(Stage primaryStage) {
 		HBox main = new HBox();
 		main.setPrefSize(1280, 720);
@@ -43,16 +45,17 @@ public class Main extends Application {
 		primaryStage.show();
 		
 		BoardManager boardManager = new BoardManager(boardPane);
-		boardPane.getNodeByRowColumnIndex(0, 0);
-		boardManager.move(Direction.LEFT);
-		boardManager.move(Direction.DOWN);
-		boardManager.move(Direction.DOWN);
-		boardManager.move(Direction.UP);
-		Location location = (Location) boardPane.getColumnList().get(0).get(0);
-		System.out.println(location.getX());
+		
+		controlPane.getUpButton().setOnAction(new ArrowButtonEventHandler(Direction.UP,boardManager));
+		controlPane.getDownButton().setOnAction(new ArrowButtonEventHandler(Direction.DOWN,boardManager));
+		controlPane.getRightButton().setOnAction(new ArrowButtonEventHandler(Direction.RIGHT,boardManager));
+		controlPane.getLeftButton().setOnAction(new ArrowButtonEventHandler(Direction.LEFT,boardManager));
+		
+		boardManager.generateNewTile();
 		
 		
 		
+	
 	}
 
 	public static void main(String[] args) {

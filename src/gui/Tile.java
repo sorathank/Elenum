@@ -36,7 +36,7 @@ public class Tile extends Label {
 		setAlignment(Pos.CENTER);
 		this.setText(Integer.toString(value));
 		this.setFont(Font.font(30));
-		this.setStyle("-fx-border-color: BLACK;");
+		//this.setStyle("-fx-border-color: PINK;");
 		this.setAlignment(Pos.CENTER);
 		
 	}

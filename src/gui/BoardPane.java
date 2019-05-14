@@ -86,34 +86,25 @@ public class BoardPane extends GridPane  {
 	    rowList.add(row2);
 	    rowList.add(row3);
 
-	    Tile a1 = Tile.newTile(2);
-	    Tile a2 = Tile.newTile(2);
-	    Tile a3 = Tile.newTile(2);
-	    Tile a4 = Tile.newTile(2);
-	    Tile a5 = Tile.newTile(2);
-	    Tile a6 = Tile.newTile(2);
-	    Tile a7 = Tile.newTile(2);
-	    Tile a8 = Tile.newTile(2);
-	    this.add(a1, 2, 0);
-	    this.add(a2, 2, 1);
-	    this.add(a3, 2, 2);
-	    this.add(a4, 2, 3);
-	    this.add(a5, 1, 0);
-	    this.add(a6, 1, 1);
-	    this.add(a7, 1, 2);
-	    this.add(a8, 1, 3);
+//	    Tile a1 = Tile.newTile(2);
+//	    Tile a2 = Tile.newTile(2);
+//	    Tile a3 = Tile.newTile(2);
+//	    Tile a4 = Tile.newTile(2);
+//	    Tile a5 = Tile.newTile(4);
+//	    Tile a6 = Tile.newTile(2);
+//	    Tile a7 = Tile.newTile(2);
+//	    Tile a8 = Tile.newTile(2);
+//	    this.add(a1, 2, 0);
+//	    this.add(a2, 2, 1);
+//	    this.add(a3, 2, 2);
+//	    this.add(a4, 2, 3);
+//	    this.add(a5, 3, 0);
+//	    this.add(a6, 1, 1);
+//	    this.add(a7, 1, 2);
+//	    this.add(a8, 1, 3);
 	    // get node Example //
 	    
-	    /* 
-	    this.add(a1, 0, 0);
-	    a1 = Tile.newRandomTile();
-	    if(getNodeByRowColumnIndex(0, 0) instanceof Tile){
-	    	Tile tile = (Tile)getNodeByRowColumnIndex(0, 0);
-	    	if (tile.getValue() == 2) {
-	    		System.out.println("Method Working");
-	    	}
-	    }
-	    */
+	    
 	}
 	
 	public ArrayList<ArrayList> getColumnList() {
