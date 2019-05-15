@@ -15,6 +15,7 @@ public class ArrowButtonEventHandler implements EventHandler<ActionEvent> {
 		this.direction = direction;
 		this.boardManager = boardManager;
 	}
+	
 
 	@Override
 	public void handle(ActionEvent arg0) {
