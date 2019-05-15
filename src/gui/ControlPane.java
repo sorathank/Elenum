@@ -19,15 +19,6 @@ public class ControlPane extends BorderPane {
 		downButton = new ArrowButton(DOWN);
 		leftButton = new ArrowButton(LEFT);
 		rightButton = new ArrowButton(RIGHT);
-		this.setPrefSize(320, 320);
-		this.setTop(upButton);
-		this.setLeft(leftButton);
-		this.setRight(rightButton);
-		this.setBottom(downButton);
-		this.setAlignment(upButton, Pos.CENTER);
-		this.setAlignment(downButton, Pos.CENTER);
-		this.setAlignment(leftButton, Pos.CENTER);
-		this.setAlignment(rightButton, Pos.CENTER);
 		
 	}
 	public Button getUpButton() {

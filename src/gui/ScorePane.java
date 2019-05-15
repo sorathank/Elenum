@@ -30,4 +30,11 @@ public class ScorePane extends VBox{
 		this.score += score;
 		this.scoreField.setText(String.format("%05d", this.score));
 	}
+	public void reset() {
+		this.score = 0;
+		this.scoreField.setText(String.format("%05d", this.score));
+	}
+	public int getScore() {
+		return score;
+	}
 }
