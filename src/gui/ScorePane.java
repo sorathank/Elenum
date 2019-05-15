@@ -27,6 +27,7 @@ public class ScorePane extends VBox{
 		this.getChildren().addAll(this.label,this.scoreField);
 	}
 	public void update(int score) {
-		this.scoreField.setText(String.format("%05d", score));
+		this.score += score;
+		this.scoreField.setText(String.format("%05d", this.score));
 	}
 }

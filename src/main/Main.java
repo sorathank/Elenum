@@ -29,6 +29,10 @@ import logic.Location;
 
 public class Main extends Application {
 	
+	private ControlPane controlPane;
+	public static ScorePane scorePane;
+	private BoardPane boardPane;
+	
 	public void start(Stage primaryStage) {
 		HBox main = new HBox();
 		main.setPrefSize(1280, 720);
@@ -38,12 +42,13 @@ public class Main extends Application {
 		title.setFont(new Font("Blackadder ITC", 72));
 		main.setBackground(new Background(new BackgroundFill(Color.LIGHTGRAY, CornerRadii.EMPTY, Insets.EMPTY)));
 		AudioClip mainSong = new AudioClip(this.getClass().getResource("/Mission Impossible Recorder.mp3").toString());
-		ScorePane scorePane = new ScorePane();
+		
+		scorePane = new ScorePane();
 		VBox numPane = new VBox();
 		VBox elePane = new VBox();
 		VBox dataPane = new VBox();
-		ControlPane controlPane = new ControlPane();
-		BoardPane boardPane = new BoardPane();
+		controlPane = new ControlPane();
+		boardPane = new BoardPane();
 		numPane.setPrefSize(480, 720);
 		numPane.getChildren().add(boardPane);
 		numPane.setAlignment(Pos.CENTER);
@@ -56,16 +61,17 @@ public class Main extends Application {
 		primaryStage.setTitle("Elenum");
 		primaryStage.show();
 //		mainSong.play();
-		
+
 		BoardManager boardManager = new BoardManager(boardPane);
-		
-		controlPane.getUpButton().setOnAction(new ArrowButtonEventHandler(Direction.UP,boardManager));
-		controlPane.getDownButton().setOnAction(new ArrowButtonEventHandler(Direction.DOWN,boardManager));
-		controlPane.getRightButton().setOnAction(new ArrowButtonEventHandler(Direction.RIGHT,boardManager));
-		controlPane.getLeftButton().setOnAction(new ArrowButtonEventHandler(Direction.LEFT,boardManager));
-		scene.addEventHandler(KeyEvent.KEY_PRESSED, (key) ->{
+
+		controlPane.getUpButton().setOnAction(new ArrowButtonEventHandler(Direction.UP, boardManager));
+		controlPane.getDownButton().setOnAction(new ArrowButtonEventHandler(Direction.DOWN, boardManager));
+		controlPane.getRightButton().setOnAction(new ArrowButtonEventHandler(Direction.RIGHT, boardManager));
+		controlPane.getLeftButton().setOnAction(new ArrowButtonEventHandler(Direction.LEFT, boardManager));
+		scene.addEventHandler(KeyEvent.KEY_PRESSED, (key) -> {
 			if (key.getCode() == KeyCode.DOWN) {
-				controlPane.getDownButton().fire();;
+				controlPane.getDownButton().fire();
+				;
 			}
 			if (key.getCode() == KeyCode.UP) {
 				controlPane.getUpButton().fire();
@@ -77,12 +83,22 @@ public class Main extends Application {
 				controlPane.getRightButton().fire();
 			}
 		});
-		
+
 		boardManager.generateNewTile();
-		
-		
-		
-	
+		boardManager.generateNewTile();
+
+	}
+
+	public ControlPane getControlPane() {
+		return controlPane;
+	}
+
+	public ScorePane getScorePane() {
+		return scorePane;
+	}
+
+	public BoardPane getBoardPane() {
+		return boardPane;
 	}
 
 	public static void main(String[] args) {

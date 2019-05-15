@@ -13,6 +13,7 @@ import main.Main;
 public class BoardManager {
 
 	private BoardPane boardPane;
+	
 
 	public BoardManager(BoardPane boardPane) {
 		this.boardPane = boardPane;
@@ -23,7 +24,6 @@ public class BoardManager {
 			return;
 		switch (direction) {
 		case UP:
-			System.out.println("Merging");
 			for (ArrayList<Location> eachColumn : boardPane.getColumnList()) {
 				Tile lastTile = null;
 				Location lastTileLocation = null;
@@ -36,6 +36,7 @@ public class BoardManager {
 						if ((lastTile != null) && (lastTile.getValue() == eachTile.getValue())) {
 							lastTile.setValue(lastTile.getValue() * 2);
 							boardPane.removeNodeByRowColumnIndex(eachTileLocation.getY(), eachTileLocation.getX());
+							Main.scorePane.update(lastTile.getValue() * 2);
 							lastTile = null;
 							lastTileLocation = null;
 
@@ -64,6 +65,7 @@ public class BoardManager {
 						if ((lastTile != null) && (lastTile.getValue() == eachTile.getValue())) {
 							lastTile.setValue(lastTile.getValue() * 2);
 							boardPane.removeNodeByRowColumnIndex(eachTileLocation.getY(), eachTileLocation.getX());
+							Main.scorePane.update(lastTile.getValue() * 2);
 							lastTile = null;
 							lastTileLocation = null;
 						} else {
@@ -91,6 +93,7 @@ public class BoardManager {
 						if ((lastTile != null) && (lastTile.getValue() == eachTile.getValue())) {
 							lastTile.setValue(lastTile.getValue() * 2);
 							boardPane.removeNodeByRowColumnIndex(eachTileLocation.getY(), eachTileLocation.getX());
+							Main.scorePane.update(lastTile.getValue() * 2);
 							lastTile = null;
 							lastTileLocation = null;
 						} else {
@@ -117,6 +120,7 @@ public class BoardManager {
 						if ((lastTile != null) && (lastTile.getValue() == eachTile.getValue())) {
 							lastTile.setValue(lastTile.getValue() * 2);
 							boardPane.removeNodeByRowColumnIndex(eachTileLocation.getY(), eachTileLocation.getX());
+							Main.scorePane.update(lastTile.getValue() * 2);
 							lastTile = null;
 							lastTileLocation = null;
 

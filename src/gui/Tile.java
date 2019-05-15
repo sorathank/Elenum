@@ -6,6 +6,11 @@ import java.util.Random;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Border;
+import javafx.scene.layout.BorderStroke;
+import javafx.scene.layout.BorderStrokeStyle;
+import javafx.scene.layout.BorderWidths;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import logic.Location;
@@ -34,11 +39,9 @@ public class Tile extends Label {
 		this.setMinSize(TILE_SIZE, TILE_SIZE);
 		setPrefSize(TILE_SIZE,TILE_SIZE);
 		setAlignment(Pos.CENTER);
-		this.setText(Integer.toString(value));
-		this.setFont(Font.font(30));
-		//this.setStyle("-fx-border-color: PINK;");
-		this.setAlignment(Pos.CENTER);
-		
+		setText(Integer.toString(value));
+		getStylesheets().add("game.css");
+		getStyleClass().addAll("game-label", "game-tile-" + value);
 	}
 	
 	public int getValue() {
@@ -46,8 +49,9 @@ public class Tile extends Label {
 	}
 	
 	public void setValue(int value) {
+		getStyleClass().add("game-tile-" + value);
+		setText(Integer.toString(value));
 		this.value = value;
-		this.setText(Integer.toString(value));
 	}
 
 	public Boolean getIsMerged() {
