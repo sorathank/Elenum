@@ -24,10 +24,8 @@ public class SoundManager {
 
 	private class SoundButtonEventHandler implements EventHandler<ActionEvent> {
 
-
-
 		public SoundButtonEventHandler() {
-			
+
 		}
 
 		@Override
@@ -60,7 +58,7 @@ public class SoundManager {
 			soundButton.playGameOverSong();
 		}
 	}
-	
+
 	public SoundButton getSoundButton() {
 		return this.soundButton;
 	}

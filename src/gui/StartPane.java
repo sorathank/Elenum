@@ -13,8 +13,9 @@ import javafx.scene.text.Font;
 public class StartPane extends Menu {
 	private static Button gameStartButton = new Button("Start");
 	private static Button quitButton = new Button("Quit");
+
 	public StartPane() {
-		super(gameStartButton,quitButton);
+		super(gameStartButton, quitButton);
 		gameStartButton.setPrefSize(300, 30);
 		gameStartButton.setFont(Font.loadFont(ClassLoader.getSystemResource("KenneyPixelSquare.ttf").toString(), 30));
 		quitButton.setPrefSize(300, 30);
@@ -23,13 +24,15 @@ public class StartPane extends Menu {
 		this.setSpacing(10);
 		this.setAlignment(Pos.CENTER);
 		this.getChildren().add(new ImageView(new Image(ClassLoader.getSystemResource("Logo2CP2048.png").toString())));
-		this.getChildren().addAll(gameStartButton,quitButton);
+		this.getChildren().addAll(gameStartButton, quitButton);
 	}
+
 	@Override
 	public Button getGameStartButton() {
 		// TODO Auto-generated method stub
 		return gameStartButton;
 	}
+
 	@Override
 	public Button getQuitButton() {
 		// TODO Auto-generated method stub

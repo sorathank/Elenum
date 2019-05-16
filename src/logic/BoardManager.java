@@ -15,7 +15,7 @@ import main.Main;
 public class BoardManager {
 
 	private BoardPane boardPane;
-	
+
 	public BoardManager(BoardPane boardPane) {
 		this.boardPane = boardPane;
 	}
@@ -255,97 +255,97 @@ public class BoardManager {
 		if (avalibleToMove(direction)) {
 			switch (direction) {
 			case UP:
-					mergeTile(Direction.UP);
-					for (ArrayList<Location> eachColumn : boardPane.getColumnList()) {
-						ArrayList<Tile> tile = new ArrayList<Tile>();
-						for (Location eachLocation : eachColumn) {
-							if (boardPane.getNodeByRowColumnIndex(eachLocation.getY(),
-									eachLocation.getX()) instanceof Tile) {
-								tile.add((Tile) boardPane.getNodeByRowColumnIndex(eachLocation.getY(),
-										eachLocation.getX()));
-								boardPane.removeNodeByRowColumnIndex(eachLocation.getY(), eachLocation.getX());
-							}
+				mergeTile(Direction.UP);
+				for (ArrayList<Location> eachColumn : boardPane.getColumnList()) {
+					ArrayList<Tile> tile = new ArrayList<Tile>();
+					for (Location eachLocation : eachColumn) {
+						if (boardPane.getNodeByRowColumnIndex(eachLocation.getY(),
+								eachLocation.getX()) instanceof Tile) {
+							tile.add(
+									(Tile) boardPane.getNodeByRowColumnIndex(eachLocation.getY(), eachLocation.getX()));
+							boardPane.removeNodeByRowColumnIndex(eachLocation.getY(), eachLocation.getX());
 						}
-						int i = 0;
-						if (tile.size() != 0) {
-							for (Tile eachTile : tile) {
-								boardPane.add(eachTile, columnNumber, i);
-								i++;
-							}
-						}
-						columnNumber++;
 					}
+					int i = 0;
+					if (tile.size() != 0) {
+						for (Tile eachTile : tile) {
+							boardPane.add(eachTile, columnNumber, i);
+							i++;
+						}
+					}
+					columnNumber++;
+				}
 				break;
 			case DOWN:
-					mergeTile(Direction.DOWN);
-					columnNumber = 0;
-					for (ArrayList<Location> eachColumn : boardPane.getColumnList()) {
-						ArrayList<Tile> tileList = new ArrayList<Tile>();
-						for (Location eachLocation : eachColumn) {
-							if (boardPane.getNodeByRowColumnIndex(eachLocation.getY(),
-									eachLocation.getX()) instanceof Tile) {
-								tileList.add((Tile) boardPane.getNodeByRowColumnIndex(eachLocation.getY(),
-										eachLocation.getX()));
-								boardPane.removeNodeByRowColumnIndex(eachLocation.getY(), eachLocation.getX());
-							}
+				mergeTile(Direction.DOWN);
+				columnNumber = 0;
+				for (ArrayList<Location> eachColumn : boardPane.getColumnList()) {
+					ArrayList<Tile> tileList = new ArrayList<Tile>();
+					for (Location eachLocation : eachColumn) {
+						if (boardPane.getNodeByRowColumnIndex(eachLocation.getY(),
+								eachLocation.getX()) instanceof Tile) {
+							tileList.add(
+									(Tile) boardPane.getNodeByRowColumnIndex(eachLocation.getY(), eachLocation.getX()));
+							boardPane.removeNodeByRowColumnIndex(eachLocation.getY(), eachLocation.getX());
 						}
-						int i = 4 - tileList.size();
-						if (tileList.size() != 0) {
-							for (Tile eachTile : tileList) {
-								boardPane.add(eachTile, columnNumber, i);
-								i++;
-							}
-						}
-						columnNumber++;
-
 					}
-				
+					int i = 4 - tileList.size();
+					if (tileList.size() != 0) {
+						for (Tile eachTile : tileList) {
+							boardPane.add(eachTile, columnNumber, i);
+							i++;
+						}
+					}
+					columnNumber++;
+
+				}
+
 				break;
 			case LEFT:
-					mergeTile(Direction.LEFT);
-					for (ArrayList<Location> eachRow : boardPane.getRowList()) {
-						ArrayList<Tile> tile = new ArrayList<Tile>();
-						for (Location eachLocation : eachRow) {
-							if (boardPane.getNodeByRowColumnIndex(eachLocation.getY(),
-									eachLocation.getX()) instanceof Tile) {
-								tile.add((Tile) boardPane.getNodeByRowColumnIndex(eachLocation.getY(),
-										eachLocation.getX()));
-								boardPane.removeNodeByRowColumnIndex(eachLocation.getY(), eachLocation.getX());
-							}
+				mergeTile(Direction.LEFT);
+				for (ArrayList<Location> eachRow : boardPane.getRowList()) {
+					ArrayList<Tile> tile = new ArrayList<Tile>();
+					for (Location eachLocation : eachRow) {
+						if (boardPane.getNodeByRowColumnIndex(eachLocation.getY(),
+								eachLocation.getX()) instanceof Tile) {
+							tile.add(
+									(Tile) boardPane.getNodeByRowColumnIndex(eachLocation.getY(), eachLocation.getX()));
+							boardPane.removeNodeByRowColumnIndex(eachLocation.getY(), eachLocation.getX());
 						}
-						int i = 0;
-						if (tile.size() != 0) {
-							for (Tile eachTile : tile) {
-								boardPane.add(eachTile, i, rowNumber);
-								i++;
-							}
-						}
-						rowNumber++;
 					}
-				
+					int i = 0;
+					if (tile.size() != 0) {
+						for (Tile eachTile : tile) {
+							boardPane.add(eachTile, i, rowNumber);
+							i++;
+						}
+					}
+					rowNumber++;
+				}
+
 				break;
 			case RIGHT:
-					mergeTile(Direction.RIGHT);
-					for (ArrayList<Location> eachRow : boardPane.getRowList()) {
-						ArrayList<Tile> tile = new ArrayList<Tile>();
-						for (Location eachLocation : eachRow) {
-							if (boardPane.getNodeByRowColumnIndex(eachLocation.getY(),
-									eachLocation.getX()) instanceof Tile) {
-								tile.add((Tile) boardPane.getNodeByRowColumnIndex(eachLocation.getY(),
-										eachLocation.getX()));
-								boardPane.removeNodeByRowColumnIndex(eachLocation.getY(), eachLocation.getX());
-							}
+				mergeTile(Direction.RIGHT);
+				for (ArrayList<Location> eachRow : boardPane.getRowList()) {
+					ArrayList<Tile> tile = new ArrayList<Tile>();
+					for (Location eachLocation : eachRow) {
+						if (boardPane.getNodeByRowColumnIndex(eachLocation.getY(),
+								eachLocation.getX()) instanceof Tile) {
+							tile.add(
+									(Tile) boardPane.getNodeByRowColumnIndex(eachLocation.getY(), eachLocation.getX()));
+							boardPane.removeNodeByRowColumnIndex(eachLocation.getY(), eachLocation.getX());
 						}
-						int i = 4 - tile.size();
-						if (tile.size() != 0) {
-							for (Tile eachTile : tile) {
-								boardPane.add(eachTile, i, rowNumber);
-								i++;
-							}
-						}
-						rowNumber++;
 					}
+					int i = 4 - tile.size();
+					if (tile.size() != 0) {
+						for (Tile eachTile : tile) {
+							boardPane.add(eachTile, i, rowNumber);
+							i++;
+						}
+					}
+					rowNumber++;
 				}
+			}
 			this.generateNewTile();
 		}
 	}
@@ -377,6 +377,7 @@ public class BoardManager {
 		boardPane.add(Tile.newRandomTile(), emptyBoxList.get(index).getX(), emptyBoxList.get(index).getY());
 
 	}
+
 	public void resetBoard() {
 		for (ArrayList<Location> eachRow : boardPane.getRowList()) {
 			for (Location eachLocation : eachRow) {
@@ -384,5 +385,5 @@ public class BoardManager {
 			}
 		}
 	}
-	
+
 }
