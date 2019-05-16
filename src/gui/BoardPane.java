@@ -10,6 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderStroke;
 import javafx.scene.layout.BorderStrokeStyle;
+import javafx.scene.layout.BorderWidths;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
@@ -25,12 +26,10 @@ public class BoardPane extends GridPane  {
 	public BoardPane() {
 		this.setMinSize(300, 300);
 		this.setMaxSize(300, 300);
-		//this.setPadding(new Insets(10));
 		this.setAlignment(Pos.CENTER);
 	    this.setGridLinesVisible(false);
-	    this.setBorder(new Border(new BorderStroke(Color.BROWN,BorderStrokeStyle.SOLID , new CornerRadii(3), null)));
-	    this.getStylesheets().add("game.css");
-	    this.getStyleClass().add("game-grid-cell");
+	    this.setBorder(new Border(new BorderStroke(Color.BROWN,BorderStrokeStyle.SOLID , new CornerRadii(3), new BorderWidths(3),null)));
+
 	    final int numCols = 4 ;
 	    final int numRows = 4 ;
 	    this.setVgap(10);
