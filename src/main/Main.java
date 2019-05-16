@@ -52,6 +52,7 @@ public class Main extends Application {
 		title.setFont(new Font("Blackadder ITC", 72));
 		main.setBackground(new Background(new BackgroundFill(Color.LIGHTYELLOW, CornerRadii.EMPTY, Insets.EMPTY)));
 		AudioClip mainSong = new AudioClip(this.getClass().getResource("/Mission Impossible Recorder.mp3").toString());
+		AudioClip gameOverSong = new AudioClip(this.getClass().getResource("/gameoversong.mp3").toString());
 		createGameMaterial();
 		BoardManager boardManager1 = new BoardManager(boardPane1);
 		BoardManager boardManager2 = new BoardManager(boardPane2);
@@ -85,7 +86,8 @@ public class Main extends Application {
 		primaryStage.setScene(startScene);
 		primaryStage.setTitle("Elenum");
 		primaryStage.show();
-		mainSong.setCycleCount(0);
+		mainSong.setCycleCount(999);
+		gameOverSong.setCycleCount(999);
 		
 		
 		
@@ -123,6 +125,7 @@ public class Main extends Application {
 				boardManager2.resetBoard();
 				scorePane.reset();
 				ArrowButtonEventHandler.isDead = false;
+				gameOverSong.stop();
 			}
 		});
 		
@@ -143,6 +146,7 @@ public class Main extends Application {
 					retryPane.setYourScore(scorePane.getScore());
 					primaryStage.setScene(retryScene);
 					mainSong.stop();
+					gameOverSong.play();
 				}
 				;
 			}
@@ -152,6 +156,7 @@ public class Main extends Application {
 					retryPane.setYourScore(scorePane.getScore());
 					primaryStage.setScene(retryScene);
 					mainSong.stop();
+					gameOverSong.play();
 				}
 			}
 			if (key.getCode() == KeyCode.LEFT) {
@@ -160,6 +165,7 @@ public class Main extends Application {
 					retryPane.setYourScore(scorePane.getScore());
 					primaryStage.setScene(retryScene);
 					mainSong.stop();
+					gameOverSong.play();
 				}
 			}
 			if (key.getCode() == KeyCode.RIGHT) {
@@ -168,6 +174,7 @@ public class Main extends Application {
 					retryPane.setYourScore(scorePane.getScore());
 					primaryStage.setScene(retryScene);
 					mainSong.stop();
+					gameOverSong.play();
 				}
 			}
 		});

@@ -7,6 +7,10 @@ import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderStroke;
 import javafx.scene.layout.BorderStrokeStyle;
@@ -28,6 +32,8 @@ public class BoardPane extends GridPane  {
 		this.setMaxSize(300, 300);
 		this.setAlignment(Pos.CENTER);
 	    this.setGridLinesVisible(false);
+	    Image background = new Image(ClassLoader.getSystemResource("background.jpg").toString());
+	    this.setBackground(new Background(new BackgroundImage(background, null, null, null, null)));
 	    this.setBorder(new Border(new BorderStroke(Color.BROWN,BorderStrokeStyle.SOLID , new CornerRadii(3), new BorderWidths(3),null)));
 
 	    final int numCols = 4 ;
