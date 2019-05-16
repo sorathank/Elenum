@@ -24,7 +24,6 @@ public class EventManager {
 	private RetryPane retryPane;
 	private SoundManager soundManager;
 	private Stage primaryStage;
-	private Main main;
 
 	public EventManager(ControlPart controlPart, BoardPane boardPane1, BoardPane boardPane2, StartPane startPane,
 			RetryPane retryPane, SoundManager soundManager,Stage primaryStage) {
@@ -41,7 +40,6 @@ public class EventManager {
 		this.boardManager1 = new BoardManager(boardPane1);
 		this.boardManager2 = new BoardManager(boardPane2);
 		
-		this.main = main;
 	}
 
 	public void setUpArrowButton() {

@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="gui.RetryPane" project="2110215_Project_2018_Elenum" 
     file="/2110215_Project_2018_Elenum/src/gui/RetryPane.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="552" y="759"/>    
+    <position height="-1" width="-1" x="589" y="516"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="gui.StartPane" project="2110215_Project_2018_Elenum" 
     file="/2110215_Project_2018_Elenum/src/gui/StartPane.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="780" y="745"/>    
+    <position height="-1" width="-1" x="800" y="560"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -66,7 +66,7 @@
   </class>  
   <class id="8" language="java" name="gui.BoardPane" project="2110215_Project_2018_Elenum" 
     file="/2110215_Project_2018_Elenum/src/gui/BoardPane.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1099" y="788"/>    
+    <position height="-1" width="-1" x="855" y="820"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -111,7 +111,7 @@
   </class>  
   <class id="13" language="java" name="main.Main" project="2110215_Project_2018_Elenum" 
     file="/2110215_Project_2018_Elenum/src/main/Main.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="268" width="206" x="1445" y="408"/>    
+    <position height="-1" width="-1" x="579" y="794"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -120,7 +120,7 @@
   </class>  
   <class id="14" language="java" name="logic.Location" project="2110215_Project_2018_Elenum" 
     file="/2110215_Project_2018_Elenum/src/logic/Location.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="214" width="169" x="1691" y="408"/>    
+    <position height="-1" width="-1" x="1117" y="534"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -129,7 +129,7 @@
   </class>  
   <class id="15" language="java" name="logic.BoardManager" project="2110215_Project_2018_Elenum" 
     file="/2110215_Project_2018_Elenum/src/logic/BoardManager.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="196" width="221" x="1900" y="408"/>    
+    <position height="-1" width="-1" x="1126" y="748"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -138,7 +138,7 @@
   </class>  
   <class id="16" language="java" name="logic.SoundManager" project="2110215_Project_2018_Elenum" 
     file="/2110215_Project_2018_Elenum/src/logic/SoundManager.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="311" y="1503"/>    
+    <position height="-1" width="-1" x="291" y="1458"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -147,7 +147,7 @@
   </class>  
   <class id="17" language="java" name="logic.SoundManager.SoundButtonEventHandler" project="2110215_Project_2018_Elenum" 
     file="/2110215_Project_2018_Elenum/src/logic/SoundManager.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="298" y="1713"/>    
+    <position height="-1" width="-1" x="313" y="1670"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      

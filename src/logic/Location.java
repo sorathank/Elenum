@@ -9,10 +9,6 @@ public class Location {
 		this.y = y;
 	}
 
-	public Location offset(Direction direction) {
-		return new Location(x + direction.getX(), y + direction.getY());
-	}
-
 	public int getX() {
 		return x;
 	}
@@ -26,7 +22,4 @@ public class Location {
 		return "Location{" + "x=" + x + ", y=" + y + '}';
 	}
 
-	public boolean isValidFor(int gridSize) {
-		return x >= 0 && x < gridSize && y >= 0 && y < gridSize;
-	}
 }
