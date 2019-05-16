@@ -85,7 +85,8 @@ public class Main extends Application {
 		primaryStage.setScene(startScene);
 		primaryStage.setTitle("Elenum");
 		primaryStage.show();
-		mainSong.play();
+		mainSong.setCycleCount(0);
+		
 		
 		
 		
@@ -96,6 +97,7 @@ public class Main extends Application {
 			public void handle(ActionEvent event) {
 				// TODO Auto-generated method stub
 				primaryStage.setScene(scene);
+				mainSong.play();
 				boardManager1.generateNewTile();
 				boardManager1.generateNewTile();
 				boardManager2.generateNewTile();
@@ -140,6 +142,7 @@ public class Main extends Application {
 				if (logic.ArrowButtonEventHandler.isDead) {
 					retryPane.setYourScore(scorePane.getScore());
 					primaryStage.setScene(retryScene);
+					mainSong.stop();
 				}
 				;
 			}
@@ -148,6 +151,7 @@ public class Main extends Application {
 				if (logic.ArrowButtonEventHandler.isDead) {
 					retryPane.setYourScore(scorePane.getScore());
 					primaryStage.setScene(retryScene);
+					mainSong.stop();
 				}
 			}
 			if (key.getCode() == KeyCode.LEFT) {
@@ -155,6 +159,7 @@ public class Main extends Application {
 				if (logic.ArrowButtonEventHandler.isDead) {
 					retryPane.setYourScore(scorePane.getScore());
 					primaryStage.setScene(retryScene);
+					mainSong.stop();
 				}
 			}
 			if (key.getCode() == KeyCode.RIGHT) {
@@ -162,6 +167,7 @@ public class Main extends Application {
 				if (logic.ArrowButtonEventHandler.isDead) {
 					retryPane.setYourScore(scorePane.getScore());
 					primaryStage.setScene(retryScene);
+					mainSong.stop();
 				}
 			}
 		});
