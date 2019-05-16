@@ -25,10 +25,13 @@ public class RetryPane extends Menu{
 		this.setAlignment(Pos.CENTER);
 		this.gameOver.setFitHeight(300);
 		this.gameOver.setFitWidth(500);
-		yourScoreString = new Label("Your Score");
+		this.yourScoreString = new Label("Your Score");
 		this.yourScore = new Label(String.format("%05d", 0));
-		yourScoreString.setFont(Font.loadFont(ClassLoader.getSystemResource("KenneyPixelSquare.ttf").toString(), 32));
+		
+		this.yourScoreString.setFont(Font.loadFont(ClassLoader.getSystemResource("KenneyPixelSquare.ttf").toString(), 32));
 		this.yourScore.setFont(Font.loadFont(ClassLoader.getSystemResource("KenneyPixelSquare.ttf").toString(), 30));
+		this.yourScoreString.setTextFill(Color.WHITE);
+		this.yourScore.setTextFill(Color.WHITE);
 		
 		gameStartButton.setFont(Font.loadFont(ClassLoader.getSystemResource("KenneyPixelSquare.ttf").toString(), 30));
 		quitButton.setFont(Font.loadFont(ClassLoader.getSystemResource("KenneyPixelSquare.ttf").toString(), 30));
