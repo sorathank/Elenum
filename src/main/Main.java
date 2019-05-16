@@ -4,6 +4,7 @@ import gui.BoardPane;
 import gui.ControlPane;
 import gui.RetryPane;
 import gui.ScorePane;
+import gui.SoundButton;
 import gui.StartPane;
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -31,7 +32,9 @@ import javafx.stage.Stage;
 import logic.ArrowButtonEventHandler;
 import logic.BoardManager;
 import logic.Direction;
+import logic.EventManager;
 import logic.Location;
+import logic.SoundManager;
 import logic.ArrowButtonEventHandler;
 
 public class Main extends Application {
@@ -42,38 +45,52 @@ public class Main extends Application {
 	private BoardPane boardPane2;
 	private StartPane startPane;
 	private RetryPane retryPane;
+	private SoundManager soundManager;
 	
 	public void start(Stage primaryStage) {
 		HBox main = new HBox();
 		main.setPrefSize(1280, 720);
 		main.setSpacing(10);
 		main.setPadding(new Insets(10));
+		
 		Label title = new Label("Elenum");
 		title.setFont(new Font("Blackadder ITC", 72));
+		
 		main.setBackground(new Background(new BackgroundFill(Color.LIGHTYELLOW, CornerRadii.EMPTY, Insets.EMPTY)));
-		AudioClip mainSong = new AudioClip(this.getClass().getResource("/Mission Impossible Recorder.mp3").toString());
-		AudioClip gameOverSong = new AudioClip(this.getClass().getResource("/gameoversong.mp3").toString());
+		
 		createGameMaterial();
-		BoardManager boardManager1 = new BoardManager(boardPane1);
-		BoardManager boardManager2 = new BoardManager(boardPane2);
+		
+		EventManager eventManager = new EventManager(controlPane, boardPane1, boardPane2, startPane, retryPane, soundManager);
+		eventManager.setUpArrowButton();
+		
+		BoardManager boardManager1 = eventManager.getBoardManager1();
+		BoardManager boardManager2 = eventManager.getBoardManager2();
 		VBox numPane = new VBox();
-		VBox elePane = new VBox();
+		VBox numPane2 = new VBox();
 		VBox dataPane = new VBox();
 		HBox retry = new HBox();
+		
+		retryPane.getChildren().add(soundManager.getSoundButton());
+		controlPane.getChildren().add(soundManager.getSoundButton());
 		retry.getChildren().add(retryPane);
 		retry.setAlignment(Pos.CENTER);
 		retry.setPrefSize(1280, 720);;
 		retry.setSpacing(10);
 		retry.setPadding(new Insets(10));
+		
 		numPane.setPrefSize(480, 720);
 		numPane.getChildren().add(boardPane1);
 		numPane.setAlignment(Pos.CENTER);
-		elePane.setPrefSize(480, 720);
-		elePane.getChildren().add(boardPane2);
-		elePane.setAlignment(Pos.CENTER);
+		
+		numPane2.setPrefSize(480, 720);
+		numPane2.getChildren().add(boardPane2);
+		numPane2.setAlignment(Pos.CENTER);
+		
 		dataPane.setAlignment(Pos.TOP_CENTER);
-		dataPane.getChildren().addAll(title, scorePane, controlPane);
-		main.getChildren().addAll(numPane, dataPane, elePane);
+		dataPane.getChildren().addAll(title, scorePane, controlPane,soundManager.getSoundButton());
+		
+		main.getChildren().addAll(numPane, dataPane, numPane2);
+		
 		Scene scene = new Scene(main);
 		HBox start = new HBox();
 		start.setPrefSize(1280, 720);
@@ -86,9 +103,7 @@ public class Main extends Application {
 		primaryStage.setScene(startScene);
 		primaryStage.setTitle("Elenum");
 		primaryStage.show();
-		mainSong.setCycleCount(999);
-		gameOverSong.setCycleCount(999);
-		
+
 		
 		
 		
@@ -99,7 +114,7 @@ public class Main extends Application {
 			public void handle(ActionEvent event) {
 				// TODO Auto-generated method stub
 				primaryStage.setScene(scene);
-				mainSong.play();
+				soundManager.playMainSong();
 				boardManager1.generateNewTile();
 				boardManager1.generateNewTile();
 				boardManager2.generateNewTile();
@@ -123,59 +138,47 @@ public class Main extends Application {
 				primaryStage.setScene(startScene);
 				boardManager1.resetBoard();
 				boardManager2.resetBoard();
+				dataPane.getChildren().add(soundManager.getSoundButton());
 				scorePane.reset();
 				ArrowButtonEventHandler.isDead = false;
-				gameOverSong.stop();
+				soundManager.stopGameOverSong();
+				soundManager.getSoundButton().setSong("mainSong");
+			}
+		});
+		retryPane.getQuitButton().setOnAction(new EventHandler<ActionEvent>() {
+
+			@Override
+			public void handle(ActionEvent event) {
+				// TODO Auto-generated method stub
+				Platform.exit();
+				System.exit(0);
 			}
 		});
 		
 
-
-		controlPane.getUpButton().addEventHandler(ActionEvent.ACTION, new ArrowButtonEventHandler(Direction.UP, boardManager1));
-		controlPane.getUpButton().addEventHandler(ActionEvent.ACTION, new ArrowButtonEventHandler(Direction.UP, boardManager2));
-		controlPane.getDownButton().addEventHandler(ActionEvent.ACTION, new ArrowButtonEventHandler(Direction.DOWN, boardManager1));
-		controlPane.getDownButton().addEventHandler(ActionEvent.ACTION, new ArrowButtonEventHandler(Direction.DOWN, boardManager2));
-		controlPane.getLeftButton().addEventHandler(ActionEvent.ACTION, new ArrowButtonEventHandler(Direction.LEFT, boardManager1));
-		controlPane.getLeftButton().addEventHandler(ActionEvent.ACTION, new ArrowButtonEventHandler(Direction.LEFT, boardManager2));
-		controlPane.getRightButton().addEventHandler(ActionEvent.ACTION, new ArrowButtonEventHandler(Direction.RIGHT, boardManager1));
-		controlPane.getRightButton().addEventHandler(ActionEvent.ACTION, new ArrowButtonEventHandler(Direction.RIGHT, boardManager2));
 		scene.addEventHandler(KeyEvent.KEY_PRESSED, (key) -> {
 			if (key.getCode() == KeyCode.DOWN) {
 				controlPane.getDownButton().fire();
-				if (logic.ArrowButtonEventHandler.isDead) {
-					retryPane.setYourScore(scorePane.getScore());
-					primaryStage.setScene(retryScene);
-					mainSong.stop();
-					gameOverSong.play();
-				}
-				;
 			}
 			if (key.getCode() == KeyCode.UP) {
 				controlPane.getUpButton().fire();
-				if (logic.ArrowButtonEventHandler.isDead) {
-					retryPane.setYourScore(scorePane.getScore());
-					primaryStage.setScene(retryScene);
-					mainSong.stop();
-					gameOverSong.play();
-				}
 			}
 			if (key.getCode() == KeyCode.LEFT) {
 				controlPane.getLeftButton().fire();
-				if (logic.ArrowButtonEventHandler.isDead) {
-					retryPane.setYourScore(scorePane.getScore());
-					primaryStage.setScene(retryScene);
-					mainSong.stop();
-					gameOverSong.play();
-				}
 			}
 			if (key.getCode() == KeyCode.RIGHT) {
 				controlPane.getRightButton().fire();
-				if (logic.ArrowButtonEventHandler.isDead) {
-					retryPane.setYourScore(scorePane.getScore());
-					primaryStage.setScene(retryScene);
-					mainSong.stop();
-					gameOverSong.play();
+			}
+			if (logic.ArrowButtonEventHandler.isDead) {
+				retryPane.setYourScore(scorePane.getScore());
+				primaryStage.setScene(retryScene);
+				soundManager.stopMainSong();
+				retryPane.getChildren().add(soundManager.getSoundButton());
+				if (soundManager.getSoundButton().isSoundOn()) {
+					soundManager.playGameOverSong();
 				}
+				soundManager.getSoundButton().setSong("gameOverSong");
+				
 			}
 		});
 
@@ -188,6 +191,7 @@ public class Main extends Application {
 		boardPane2 = new BoardPane();
 		startPane = new StartPane();
 		retryPane = new RetryPane();
+		soundManager = new SoundManager(new SoundButton());
 	}
 
 	public ControlPane getControlPane() {

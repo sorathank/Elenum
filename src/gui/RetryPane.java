@@ -27,8 +27,11 @@ public class RetryPane extends Menu{
 		yourScoreString.setFont(new Font(30));
 		this.yourScore.setFont(new Font(26));
 		gameStartButton.setFont(new Font("Arial Round MT Bold", 30));
+		quitButton.setFont(new Font("Arial Round MT Bold", 30));
 		this.setPrefSize(300, 30);
-		this.getChildren().addAll(gameOver,yourScoreString,yourScore,gameStartButton);
+		this.getChildren().addAll(gameOver,yourScoreString,yourScore,gameStartButton,quitButton);
+		gameStartButton.setPrefSize(150, 30);
+		quitButton.setPrefSize(150, 30);
 	}
 	public ImageView getGameOver() {
 		return gameOver;

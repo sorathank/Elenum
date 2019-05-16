@@ -32,7 +32,7 @@ public class BoardPane extends GridPane  {
 		this.setMaxSize(300, 300);
 		this.setAlignment(Pos.CENTER);
 	    this.setGridLinesVisible(false);
-	    Image background = new Image(ClassLoader.getSystemResource("background.jpg").toString());
+	    Image background = new Image(ClassLoader.getSystemResource("BoardBackground.jpg").toString());
 	    this.setBackground(new Background(new BackgroundImage(background, null, null, null, null)));
 	    this.setBorder(new Border(new BorderStroke(Color.BROWN,BorderStrokeStyle.SOLID , new CornerRadii(3), new BorderWidths(3),null)));
 

@@ -1,72 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.2" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
   realizations="true" associations="false" dependencies="false" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="gui.RetryPane" project="2110215_Project_2018_Elenum" 
+  <class id="1" language="java" name="gui.Menu" project="2110215_Project_2018_Elenum" 
+    file="/2110215_Project_2018_Elenum/src/gui/Menu.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="767" y="473"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="gui.RetryPane" project="2110215_Project_2018_Elenum" 
     file="/2110215_Project_2018_Elenum/src/gui/RetryPane.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="196" width="180" x="108" y="88"/>    
+    <position height="-1" width="-1" x="692" y="713"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="logic.ArrowButtonEventHandler" project="2110215_Project_2018_Elenum" 
-    file="/2110215_Project_2018_Elenum/src/logic/ArrowButtonEventHandler.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="271" y="380"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="3" language="java" name="gui.ControlPane" project="2110215_Project_2018_Elenum" 
-    file="/2110215_Project_2018_Elenum/src/gui/ControlPane.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="435" y="137"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="4" language="java" name="gui.ScorePane" project="2110215_Project_2018_Elenum" 
+  <class id="3" language="java" name="gui.ScorePane" project="2110215_Project_2018_Elenum" 
     file="/2110215_Project_2018_Elenum/src/gui/ScorePane.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="615" y="199"/>    
+    <position height="-1" width="-1" x="142" y="1483"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="gui.StartPane" project="2110215_Project_2018_Elenum" 
+  <class id="4" language="java" name="gui.StartPane" project="2110215_Project_2018_Elenum" 
     file="/2110215_Project_2018_Elenum/src/gui/StartPane.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="578" y="420"/>    
+    <position height="-1" width="-1" x="916" y="672"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <enumeration id="6" language="java" name="logic.Direction" project="2110215_Project_2018_Elenum" 
+  <enumeration id="5" language="java" name="logic.Direction" project="2110215_Project_2018_Elenum" 
     file="/2110215_Project_2018_Elenum/src/logic/Direction.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="838" y="200"/>    
+    <position height="-1" width="-1" x="312" y="1113"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </enumeration>  
-  <class id="7" language="java" name="main.Main" project="2110215_Project_2018_Elenum" 
+  <class id="6" language="java" name="main.Main" project="2110215_Project_2018_Elenum" 
     file="/2110215_Project_2018_Elenum/src/main/Main.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="835" y="499"/>    
+    <position height="-1" width="-1" x="514" y="213"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="gui.ArrowButton" project="2110215_Project_2018_Elenum" 
+  <class id="7" language="java" name="gui.ArrowButton" project="2110215_Project_2018_Elenum" 
     file="/2110215_Project_2018_Elenum/src/gui/ArrowButton.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="993" y="127"/>    
+    <position height="106" width="139" x="237" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="gui.SoundButton" project="2110215_Project_2018_Elenum" 
+    file="/2110215_Project_2018_Elenum/src/gui/SoundButton.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="722" y="204"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -75,7 +75,7 @@
   </class>  
   <class id="9" language="java" name="gui.BoardPane" project="2110215_Project_2018_Elenum" 
     file="/2110215_Project_2018_Elenum/src/gui/BoardPane.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1120" y="429"/>    
+    <position height="-1" width="-1" x="415" y="1450"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -84,31 +84,88 @@
   </class>  
   <class id="10" language="java" name="logic.Location" project="2110215_Project_2018_Elenum" 
     file="/2110215_Project_2018_Elenum/src/logic/Location.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1222" y="138"/>    
+    <position height="-1" width="-1" x="306" y="266"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="logic.BoardManager" project="2110215_Project_2018_Elenum" 
-    file="/2110215_Project_2018_Elenum/src/logic/BoardManager.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1386" y="520"/>    
+  <class id="11" language="java" name="logic.SoundManager" project="2110215_Project_2018_Elenum" 
+    file="/2110215_Project_2018_Elenum/src/logic/SoundManager.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="869" y="1373"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="gui.Tile" project="2110215_Project_2018_Elenum" 
+  <class id="12" language="java" name="logic.SoundManager.SoundButtonEventHandler" project="2110215_Project_2018_Elenum" 
+    file="/2110215_Project_2018_Elenum/src/logic/SoundManager.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="867" y="1605"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="gui.Tile" project="2110215_Project_2018_Elenum" 
     file="/2110215_Project_2018_Elenum/src/gui/Tile.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1424" y="205"/>    
+    <position height="268" width="156" x="41" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
+  <class id="14" language="java" name="logic.ArrowButtonEventHandler" project="2110215_Project_2018_Elenum" 
+    file="/2110215_Project_2018_Elenum/src/logic/ArrowButtonEventHandler.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="565" y="1079"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="gui.ControlPane" project="2110215_Project_2018_Elenum" 
+    file="/2110215_Project_2018_Elenum/src/gui/ControlPane.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="150" y="1148"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="logic.EventManager" project="2110215_Project_2018_Elenum" 
+    file="/2110215_Project_2018_Elenum/src/logic/EventManager.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="307" y="609"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="logic.BoardManager" project="2110215_Project_2018_Elenum" 
+    file="/2110215_Project_2018_Elenum/src/logic/BoardManager.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="960" y="1097"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <nesting id="18">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="12"/>  
+  </nesting>  
+  <generalization id="19">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <generalization id="20">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

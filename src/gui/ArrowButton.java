@@ -15,11 +15,11 @@ import javafx.scene.paint.Color;
 import logic.Direction;
 
 public class ArrowButton extends Button {
-	
+
 	private Direction direction;
 
 	public ArrowButton(String direction) {
-		
+
 		switch (direction) {
 		case "Up":
 			this.direction = Direction.UP;
@@ -36,9 +36,6 @@ public class ArrowButton extends Button {
 
 		}
 
-		
 	}
 
-	
-	
 }
