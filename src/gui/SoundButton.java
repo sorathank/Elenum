@@ -11,7 +11,7 @@ import javafx.scene.media.AudioClip;
 public class SoundButton extends Button {
 
 	private ImageView soundOn, soundOff;
-	private boolean isOn;
+	private static boolean isOn;
 	private AudioClip mainSong = new AudioClip(
 			this.getClass().getResource("/Mission Impossible Recorder.mp3").toString());
 	private AudioClip gameOverSong = new AudioClip(this.getClass().getResource("/gameoversong.mp3").toString());
@@ -27,19 +27,19 @@ public class SoundButton extends Button {
 		this.setAlignment(Pos.CENTER);
 	}
 
-	public Boolean isSoundOn() {
+	public static Boolean isSoundOn() {
 		return isOn;
 	}
 
 	public void Mute() {
-		this.isOn = false;
+		isOn = false;
 		this.setGraphic(soundOff);
 		this.stopMainSong();
 		this.stopGameOverSong();
 	}
 
 	public void unMute() {
-		this.isOn = true;
+		isOn = true;
 		this.setGraphic(soundOn);
 		if (currentSong.equals("mainSong")) {
 			this.playMainSong();
@@ -48,8 +48,8 @@ public class SoundButton extends Button {
 		}
 
 	}
-	
-	public void setSong (String song) {
+
+	public void setSong(String song) {
 		if (song.equals("gameOverSong") || song.equals("mainSong")) {
 			currentSong = song;
 		}

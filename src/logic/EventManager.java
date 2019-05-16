@@ -1,7 +1,7 @@
 package logic;
 
 import gui.BoardPane;
-import gui.ControlPane;
+import gui.ControlPart;
 import gui.RetryPane;
 import gui.ScorePane;
 import gui.StartPane;
@@ -17,7 +17,7 @@ import main.Main;
 
 public class EventManager {
 
-	private ControlPane controlPane;
+	private ControlPart controlPart;
 	private BoardPane boardPane1, boardPane2;
 	private BoardManager boardManager1, boardManager2;
 	private StartPane startPane;
@@ -26,10 +26,10 @@ public class EventManager {
 	private Stage primaryStage;
 	private Main main;
 
-	public EventManager(ControlPane controlPane, BoardPane boardPane1, BoardPane boardPane2, StartPane startPane,
+	public EventManager(ControlPart controlPart, BoardPane boardPane1, BoardPane boardPane2, StartPane startPane,
 			RetryPane retryPane, SoundManager soundManager,Stage primaryStage) {
 
-		this.controlPane = controlPane;
+		this.controlPart = controlPart;
 		this.boardPane1 = boardPane1;
 		this.boardPane2 = boardPane2;
 		this.startPane = startPane;
@@ -45,21 +45,21 @@ public class EventManager {
 	}
 
 	public void setUpArrowButton() {
-		controlPane.getUpButton().addEventHandler(ActionEvent.ACTION,
+		controlPart.getUpButton().addEventHandler(ActionEvent.ACTION,
 				new ArrowButtonEventHandler(Direction.UP, boardManager1));
-		controlPane.getUpButton().addEventHandler(ActionEvent.ACTION,
+		controlPart.getUpButton().addEventHandler(ActionEvent.ACTION,
 				new ArrowButtonEventHandler(Direction.UP, boardManager2));
-		controlPane.getDownButton().addEventHandler(ActionEvent.ACTION,
+		controlPart.getDownButton().addEventHandler(ActionEvent.ACTION,
 				new ArrowButtonEventHandler(Direction.DOWN, boardManager1));
-		controlPane.getDownButton().addEventHandler(ActionEvent.ACTION,
+		controlPart.getDownButton().addEventHandler(ActionEvent.ACTION,
 				new ArrowButtonEventHandler(Direction.DOWN, boardManager2));
-		controlPane.getLeftButton().addEventHandler(ActionEvent.ACTION,
+		controlPart.getLeftButton().addEventHandler(ActionEvent.ACTION,
 				new ArrowButtonEventHandler(Direction.LEFT, boardManager1));
-		controlPane.getLeftButton().addEventHandler(ActionEvent.ACTION,
+		controlPart.getLeftButton().addEventHandler(ActionEvent.ACTION,
 				new ArrowButtonEventHandler(Direction.LEFT, boardManager2));
-		controlPane.getRightButton().addEventHandler(ActionEvent.ACTION,
+		controlPart.getRightButton().addEventHandler(ActionEvent.ACTION,
 				new ArrowButtonEventHandler(Direction.RIGHT, boardManager1));
-		controlPane.getRightButton().addEventHandler(ActionEvent.ACTION,
+		controlPart.getRightButton().addEventHandler(ActionEvent.ACTION,
 				new ArrowButtonEventHandler(Direction.RIGHT, boardManager2));
 	}
 
@@ -126,16 +126,16 @@ public class EventManager {
 	public void setupSceneKeyHandler(Scene scene,ScorePane scorePane,Scene retryScene) {
 		scene.addEventHandler(KeyEvent.KEY_PRESSED, (key) -> {
 			if (key.getCode() == KeyCode.DOWN) {
-				controlPane.getDownButton().fire();
+				controlPart.getDownButton().fire();
 			}
 			if (key.getCode() == KeyCode.UP) {
-				controlPane.getUpButton().fire();
+				controlPart.getUpButton().fire();
 			}
 			if (key.getCode() == KeyCode.LEFT) {
-				controlPane.getLeftButton().fire();
+				controlPart.getLeftButton().fire();
 			}
 			if (key.getCode() == KeyCode.RIGHT) {
-				controlPane.getRightButton().fire();
+				controlPart.getRightButton().fire();
 			}
 			if (logic.ArrowButtonEventHandler.isDead) {
 				retryPane.setYourScore(scorePane.getScore());
@@ -150,8 +150,24 @@ public class EventManager {
 			}
 		});
 	}
-	public ControlPane getControlPane() {
-		return controlPane;
+	
+	public void setRestartButtonEvent(Scene startScene, ScorePane scorePane) {
+		controlPart.getRestartButton().setOnAction(e -> {
+			boardManager1.resetBoard();
+			boardManager2.resetBoard();
+			scorePane.reset();
+			boardManager1.generateNewTile();
+			boardManager1.generateNewTile();
+			boardManager2.generateNewTile();
+			boardManager2.generateNewTile();
+			soundManager.getSoundButton().stopMainSong();
+			if (soundManager.getSoundButton().isSoundOn()) {
+				soundManager.playMainSong();
+			}
+		});
+	}
+	public ControlPart getControlPart() {
+		return controlPart;
 	}
 
 	public BoardPane getBoardPane1() {
@@ -180,6 +196,16 @@ public class EventManager {
 
 	public SoundManager getSoundManager() {
 		return soundManager;
+	}
+
+	public void setUpAllButton(Scene scene, Scene startScene, VBox dataPane, ScorePane scorePane, Scene retryScene) {
+		// TODO Auto-generated method stub
+		setupStartPaneStartButton(scene);
+		setupStartPaneQuitButton();
+		setupRetryPaneStartButton(startScene, dataPane, scorePane);
+		setupRetryPaneQuitButton();
+		setupSceneKeyHandler(scene, scorePane, retryScene);
+		setRestartButtonEvent(startScene, scorePane);
 	}
 
 }

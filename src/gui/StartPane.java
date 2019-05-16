@@ -4,6 +4,8 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -13,13 +15,14 @@ public class StartPane extends Menu {
 	private static Button quitButton = new Button("Quit");
 	public StartPane() {
 		super(gameStartButton,quitButton);
-		gameStartButton.setPrefSize(100, 30);
-		gameStartButton.setFont(new Font("Arial Round MT Bold", 20));
-		quitButton.setPrefSize(100, 30);
-		quitButton.setFont(new Font("Arial Round MT Bold", 20));
+		gameStartButton.setPrefSize(300, 30);
+		gameStartButton.setFont(Font.loadFont(ClassLoader.getSystemResource("KenneyPixelSquare.ttf").toString(), 30));
+		quitButton.setPrefSize(300, 30);
+		quitButton.setFont(Font.loadFont(ClassLoader.getSystemResource("KenneyPixelSquare.ttf").toString(), 30));
 		this.setPadding(new Insets(10));
 		this.setSpacing(10);
 		this.setAlignment(Pos.CENTER);
+		this.getChildren().add(new ImageView(new Image(ClassLoader.getSystemResource("Logo2CP2048.png").toString())));
 		this.getChildren().addAll(gameStartButton,quitButton);
 	}
 

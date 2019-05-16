@@ -5,15 +5,17 @@ import java.util.Random;
 
 import gui.ArrowButton;
 import gui.BoardPane;
+import gui.SoundButton;
 import gui.Tile;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.media.AudioClip;
 import main.Main;
 
 public class BoardManager {
 
 	private BoardPane boardPane;
-
+	
 	public BoardManager(BoardPane boardPane) {
 		this.boardPane = boardPane;
 	}
@@ -248,12 +250,12 @@ public class BoardManager {
 	}
 
 	public void move(Direction direction) {
+		int rowNumber = 0;
+		int columnNumber = 0;
 		if (avalibleToMove(direction)) {
 			switch (direction) {
 			case UP:
-				if (avalibleToMove(Direction.UP)) {
 					mergeTile(Direction.UP);
-					int columnNumber = 0;
 					for (ArrayList<Location> eachColumn : boardPane.getColumnList()) {
 						ArrayList<Tile> tile = new ArrayList<Tile>();
 						for (Location eachLocation : eachColumn) {
@@ -273,12 +275,10 @@ public class BoardManager {
 						}
 						columnNumber++;
 					}
-				}
 				break;
 			case DOWN:
-				if (avalibleToMove(Direction.DOWN)) {
 					mergeTile(Direction.DOWN);
-					int columnNumber = 0;
+					columnNumber = 0;
 					for (ArrayList<Location> eachColumn : boardPane.getColumnList()) {
 						ArrayList<Tile> tileList = new ArrayList<Tile>();
 						for (Location eachLocation : eachColumn) {
@@ -299,12 +299,10 @@ public class BoardManager {
 						columnNumber++;
 
 					}
-				}
+				
 				break;
 			case LEFT:
-				if (avalibleToMove(Direction.LEFT)) {
 					mergeTile(Direction.LEFT);
-					int rowNumber = 0;
 					for (ArrayList<Location> eachRow : boardPane.getRowList()) {
 						ArrayList<Tile> tile = new ArrayList<Tile>();
 						for (Location eachLocation : eachRow) {
@@ -324,12 +322,10 @@ public class BoardManager {
 						}
 						rowNumber++;
 					}
-				}
+				
 				break;
 			case RIGHT:
-				if (avalibleToMove(Direction.RIGHT)) {
 					mergeTile(Direction.RIGHT);
-					int rowNumber = 0;
 					for (ArrayList<Location> eachRow : boardPane.getRowList()) {
 						ArrayList<Tile> tile = new ArrayList<Tile>();
 						for (Location eachLocation : eachRow) {
@@ -350,7 +346,6 @@ public class BoardManager {
 						rowNumber++;
 					}
 				}
-			}
 			this.generateNewTile();
 		}
 	}
@@ -389,4 +384,5 @@ public class BoardManager {
 			}
 		}
 	}
+	
 }

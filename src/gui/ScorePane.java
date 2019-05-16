@@ -21,8 +21,8 @@ public class ScorePane extends VBox{
 		this.setPrefHeight(200);
 		this.setPrefWidth(180);
 		this.label.setText("Score");
-		label.setFont(new Font(44));
-		scoreField.setFont(new Font(32));
+		label.setFont(Font.loadFont(ClassLoader.getSystemResource("KenneyPixelSquare.ttf").toString(), 44));
+		scoreField.setFont(Font.loadFont(ClassLoader.getSystemResource("KenneyPixelSquare.ttf").toString(), 32));
 		this.scoreField.setText(String.format("%05d",score));
 		this.getChildren().addAll(this.label,this.scoreField);
 	}

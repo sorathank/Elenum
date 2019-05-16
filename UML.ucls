@@ -127,8 +127,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="15" language="java" name="gui.ControlPane" project="2110215_Project_2018_Elenum" 
-    file="/2110215_Project_2018_Elenum/src/gui/ControlPane.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="15" language="java" name="gui.ControlPart" project="2110215_Project_2018_Elenum" 
+    file="/2110215_Project_2018_Elenum/src/gui/ControlPart.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="150" y="1148"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
