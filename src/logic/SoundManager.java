@@ -9,7 +9,6 @@ import javafx.scene.media.AudioClip;
 public class SoundManager {
 
 	private SoundButton soundButton;
-	private AudioClip mainSong, gameOverSong;
 
 	public SoundManager(SoundButton soundButton) {
 		this.soundButton = soundButton;
