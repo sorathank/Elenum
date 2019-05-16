@@ -32,6 +32,7 @@ public class BoardPane extends GridPane  {
 
 	    final int numCols = 4 ;
 	    final int numRows = 4 ;
+	    
 	    this.setVgap(10);
 	    this.setHgap(10);
 	    for (int i = 0; i < numCols; i++) {
