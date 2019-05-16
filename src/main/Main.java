@@ -50,14 +50,16 @@ public class Main extends Application {
 	private SoundManager soundManager;
 
 	public void start(Stage primaryStage) {
-		HBox main = new HBox();
-		main.setPrefSize(1280, 720);
-		main.setSpacing(10);
-		main.setPadding(new Insets(10));
+		HBox playPane = new HBox();
+		playPane.setPrefSize(1280, 720);
+		playPane.setSpacing(10);
+		playPane.setPadding(new Insets(10));
 
-		ImageView imageView = new ImageView(new Image(ClassLoader.getSystemResource("Logo2CP2048.png").toString()));
-
-		main.setBackground(new Background(new BackgroundFill(Color.LIGHTYELLOW, CornerRadii.EMPTY, Insets.EMPTY)));
+		ImageView logo = new ImageView(new Image(ClassLoader.getSystemResource("Logo2CP2048.png").toString()));
+		Image background = new Image(ClassLoader.getSystemResource("background.png").toString());
+		Image forestBackGround = new Image(ClassLoader.getSystemResource("backgroundForest.png").toString());
+		
+		playPane.setBackground(new Background(new BackgroundImage(forestBackGround, null, null, null, null)));
 
 		createGameMaterial();
 
@@ -94,14 +96,14 @@ public class Main extends Application {
 		dataPane.setPadding(new Insets(20));
 		dataPane.setAlignment(Pos.TOP_CENTER);
 		dataPane.setSpacing(10);
-		dataPane.getChildren().addAll(imageView, scorePane, controlPart.getRestartButton(), soundManager.getSoundButton());
+		dataPane.getChildren().addAll(logo, scorePane, controlPart.getRestartButton(), soundManager.getSoundButton());
 
-		main.getChildren().addAll(numPane, dataPane, numPane2);
+		playPane.getChildren().addAll(numPane, dataPane, numPane2);
 
-		Scene scene = new Scene(main);
+		Scene playScene = new Scene(playPane);
+		
 		HBox start = new HBox();
 		start.setPrefSize(1280, 720);
-		Image background = new Image(ClassLoader.getSystemResource("background.png").toString());
 		start.setBackground(new Background(new BackgroundImage(background, null, null, null, null)));
 		start.setSpacing(10);
 		start.setPadding(new Insets(10));
@@ -114,7 +116,7 @@ public class Main extends Application {
 		primaryStage.setTitle("CP2048");
 		primaryStage.show();
 
-		eventManager.setUpAllButton(scene,startScene,dataPane,scorePane,retryScene);
+		eventManager.setUpAllButton(playScene,startScene,dataPane,scorePane,retryScene);
 	}
 
 	public void createGameMaterial() {
