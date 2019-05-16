@@ -37,10 +37,11 @@ public class RetryPane extends Menu {
 
 		restartButton.setFont(Font.loadFont(ClassLoader.getSystemResource("KenneyPixelSquare.ttf").toString(), 30));
 		quitButton.setFont(Font.loadFont(ClassLoader.getSystemResource("KenneyPixelSquare.ttf").toString(), 30));
-		this.setPrefSize(300, 30);
-		this.getChildren().addAll(gameOver, yourScoreString, yourScore, restartButton, quitButton);
 		restartButton.setPrefSize(200, 30);
 		quitButton.setPrefSize(200, 30);
+		this.setPrefSize(300, 30);
+		this.getChildren().addAll(gameOver, yourScoreString, yourScore, restartButton, quitButton);
+
 	}
 
 	public ImageView getGameOver() {
