@@ -12,12 +12,14 @@ public class SoundButton extends Button {
 
 	private ImageView soundOn, soundOff;
 	private static boolean isOn;
-	private AudioClip mainSong = new AudioClip(
-			this.getClass().getResource("/Mission Impossible Recorder.mp3").toString());
-	private AudioClip gameOverSong = new AudioClip(this.getClass().getResource("/gameoversong.mp3").toString());
+	private AudioClip mainSong;
+	private AudioClip gameOverSong;
 	private String currentSong;
 
 	public SoundButton() {
+		this.mainSong = new AudioClip(
+				this.getClass().getResource("/Mission Impossible Recorder.mp3").toString());
+		this.gameOverSong = new AudioClip(this.getClass().getResource("/gameoversong.mp3").toString());
 		isOn = true;
 		soundOn = new ImageView(new Image(ClassLoader.getSystemResource("SoundOn.png").toString()));
 		soundOff = new ImageView(new Image(ClassLoader.getSystemResource("SoundOff.png").toString()));
@@ -27,7 +29,7 @@ public class SoundButton extends Button {
 		this.setAlignment(Pos.CENTER);
 	}
 
-	public static Boolean isSoundOn() {
+	public static boolean isSoundOn() {
 		return isOn;
 	}
 
