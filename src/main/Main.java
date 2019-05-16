@@ -91,7 +91,7 @@ public class Main extends Application {
 		
 		
 		
-		startPane.getStartButton().setOnAction(new EventHandler<ActionEvent>() {
+		startPane.getGameStartButton().setOnAction(new EventHandler<ActionEvent>() {
 			
 			@Override
 			public void handle(ActionEvent event) {
@@ -113,7 +113,7 @@ public class Main extends Application {
 				System.exit(0);
 			}
 		});
-		retryPane.getRetry().setOnAction(new EventHandler<ActionEvent>() {
+		retryPane.getGameStartButton().setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
 			public void handle(ActionEvent event) {

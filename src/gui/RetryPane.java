@@ -9,11 +9,14 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import main.Main;
 
-public class RetryPane extends VBox{
+public class RetryPane extends Menu{
 	private ImageView gameOver = new ImageView(ClassLoader.getSystemResource("GAMEOVER_copy_1024x1024.jpg").toString());
-	private Button retry;
+	private static Button gameStartButton = new Button("Restart");
+	private static Button quitButton = new Button("Quit");
 	private Label yourScore;
+	
 	public RetryPane() {
+		super(gameStartButton,quitButton);
 		this.setPadding(new Insets(10));
 		this.setSpacing(10);
 		this.setAlignment(Pos.CENTER);
@@ -23,17 +26,14 @@ public class RetryPane extends VBox{
 		this.yourScore = new Label(String.format("%05d", 0));
 		yourScoreString.setFont(new Font(30));
 		this.yourScore.setFont(new Font(26));
-		this.retry = new Button("Restart");
-		this.retry.setFont(new Font("Arial Round MT Bold", 30));
+		gameStartButton.setFont(new Font("Arial Round MT Bold", 30));
 		this.setPrefSize(300, 30);
-		this.getChildren().addAll(gameOver,yourScoreString,yourScore,retry);
+		this.getChildren().addAll(gameOver,yourScoreString,yourScore,gameStartButton);
 	}
 	public ImageView getGameOver() {
 		return gameOver;
 	}
-	public Button getRetry() {
-		return retry;
-	}
+	
 	public void setYourScore(int score) {
 		this.yourScore.setText(String.format("%05d", score));
 	}

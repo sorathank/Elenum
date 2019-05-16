@@ -1,6 +1,6 @@
 .game-tile-2    { 
     -fx-font-size: 30.0px;
-    -fx-text-fill: #776e65;
+    -fx-text-fill: #8c847c;
     -fx-background-color: #eee4da; 
     -fx-background-radius: 3.0;
     -fx-border-radius: 3.0;
@@ -8,21 +8,21 @@
 .game-tile-4    { 
     -fx-font-size: 30.0px;
     -fx-text-fill: #776e65;
-    -fx-background-color: #ede0c8; 
+    -fx-background-color: #af9d83; 
     -fx-background-radius: 3.0;
     -fx-border-radius: 3.0;
 }
 .game-tile-8    { 
     -fx-font-size: 30.0px;
     -fx-text-fill: #f9f6f2;
-    -fx-background-color: #f2b179; 
+    -fx-background-color: #cc986c; 
     -fx-background-radius: 3.0;
     -fx-border-radius: 3.0;
 }
 .game-tile-16   { 
     -fx-font-size: 30.0px;
     -fx-text-fill: #f9f6f2;
-    -fx-background-color: #f59563; 
+    -fx-background-color: #d17a4d; 
     -fx-background-radius: 3.0;
     -fx-border-radius: 3.0;
 }

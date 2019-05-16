@@ -8,26 +8,19 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 
-public class StartPane extends VBox {
-	private Button StartButton;
-	private Button QuitButton;
+public class StartPane extends Menu {
+	private static Button gameStartButton = new Button("Start");
+	private static Button quitButton = new Button("Quit");
 	public StartPane() {
-		String start ="Start";
-		this.StartButton = new Button(start);
-		this.StartButton.setPrefSize(100, 30);
-		this.StartButton.setFont(new Font("Arial Round MT Bold", 20));
-		this.QuitButton = new Button("Quit");
-		this.QuitButton.setPrefSize(100, 30);
-		this.QuitButton.setFont(new Font("Arial Round MT Bold", 20));
+		super(gameStartButton,quitButton);
+		gameStartButton.setPrefSize(100, 30);
+		gameStartButton.setFont(new Font("Arial Round MT Bold", 20));
+		quitButton.setPrefSize(100, 30);
+		quitButton.setFont(new Font("Arial Round MT Bold", 20));
 		this.setPadding(new Insets(10));
 		this.setSpacing(10);
 		this.setAlignment(Pos.CENTER);
-		this.getChildren().addAll(StartButton,QuitButton);
+		this.getChildren().addAll(gameStartButton,quitButton);
 	}
-	public Button getStartButton() {
-		return StartButton;
-	}
-	public Button getQuitButton() {
-		return QuitButton;
-	}
+
 }

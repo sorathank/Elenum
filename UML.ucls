@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.2" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="false" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="gui.RetryPane" project="2110215_Project_2018_Elenum" 
+    file="/2110215_Project_2018_Elenum/src/gui/RetryPane.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="196" width="180" x="108" y="88"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="logic.ArrowButtonEventHandler" project="2110215_Project_2018_Elenum" 
+    file="/2110215_Project_2018_Elenum/src/logic/ArrowButtonEventHandler.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="271" y="380"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="gui.ControlPane" project="2110215_Project_2018_Elenum" 
+    file="/2110215_Project_2018_Elenum/src/gui/ControlPane.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="435" y="137"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="gui.ScorePane" project="2110215_Project_2018_Elenum" 
+    file="/2110215_Project_2018_Elenum/src/gui/ScorePane.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="615" y="199"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="gui.StartPane" project="2110215_Project_2018_Elenum" 
+    file="/2110215_Project_2018_Elenum/src/gui/StartPane.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="578" y="420"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="6" language="java" name="logic.Direction" project="2110215_Project_2018_Elenum" 
+    file="/2110215_Project_2018_Elenum/src/logic/Direction.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="838" y="200"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="7" language="java" name="main.Main" project="2110215_Project_2018_Elenum" 
+    file="/2110215_Project_2018_Elenum/src/main/Main.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="835" y="499"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="gui.ArrowButton" project="2110215_Project_2018_Elenum" 
+    file="/2110215_Project_2018_Elenum/src/gui/ArrowButton.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="993" y="127"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="gui.BoardPane" project="2110215_Project_2018_Elenum" 
+    file="/2110215_Project_2018_Elenum/src/gui/BoardPane.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1120" y="429"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="logic.Location" project="2110215_Project_2018_Elenum" 
+    file="/2110215_Project_2018_Elenum/src/logic/Location.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1222" y="138"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="logic.BoardManager" project="2110215_Project_2018_Elenum" 
+    file="/2110215_Project_2018_Elenum/src/logic/BoardManager.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1386" y="520"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="gui.Tile" project="2110215_Project_2018_Elenum" 
+    file="/2110215_Project_2018_Elenum/src/gui/Tile.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1424" y="205"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
