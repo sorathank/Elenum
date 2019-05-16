@@ -93,7 +93,7 @@
   </class>  
   <class id="11" language="java" name="logic.SoundManager" project="2110215_Project_2018_Elenum" 
     file="/2110215_Project_2018_Elenum/src/logic/SoundManager.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="869" y="1373"/>    
+    <position height="-1" width="-1" x="731" y="1340"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -102,7 +102,7 @@
   </class>  
   <class id="12" language="java" name="logic.SoundManager.SoundButtonEventHandler" project="2110215_Project_2018_Elenum" 
     file="/2110215_Project_2018_Elenum/src/logic/SoundManager.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="867" y="1605"/>    
+    <position height="-1" width="-1" x="765" y="1557"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -138,7 +138,7 @@
   </class>  
   <class id="16" language="java" name="logic.EventManager" project="2110215_Project_2018_Elenum" 
     file="/2110215_Project_2018_Elenum/src/logic/EventManager.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="307" y="609"/>    
+    <position height="-1" width="-1" x="303" y="661"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -154,16 +154,16 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <nesting id="18">    
+  <generalization id="18">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <nesting id="19">    
     <end type="SOURCE" refId="11"/>    
     <end type="TARGET" refId="12"/>  
   </nesting>  
-  <generalization id="19">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="1"/>  
-  </generalization>  
   <generalization id="20">    
-    <end type="SOURCE" refId="4"/>    
+    <end type="SOURCE" refId="2"/>    
     <end type="TARGET" refId="1"/>  
   </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

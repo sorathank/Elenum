@@ -3,7 +3,7 @@ package gui;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 
-public class Menu extends VBox {
+public abstract class Menu extends VBox {
 
 	private Button gameStartButton,quitButton;
 	
@@ -12,11 +12,6 @@ public class Menu extends VBox {
 		this.quitButton = quitButton;
 	}
 	
-	public Button getGameStartButton() {
-		return this.gameStartButton;
-	}
-	
-	public Button getQuitButton() {
-		return this.quitButton;
-	}
+	public abstract Button getGameStartButton();
+	public abstract Button getQuitButton();
 }

@@ -25,5 +25,15 @@ public class StartPane extends Menu {
 		this.getChildren().add(new ImageView(new Image(ClassLoader.getSystemResource("Logo2CP2048.png").toString())));
 		this.getChildren().addAll(gameStartButton,quitButton);
 	}
+	@Override
+	public Button getGameStartButton() {
+		// TODO Auto-generated method stub
+		return gameStartButton;
+	}
+	@Override
+	public Button getQuitButton() {
+		// TODO Auto-generated method stub
+		return quitButton;
+	}
 
 }

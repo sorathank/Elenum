@@ -14,12 +14,12 @@ import main.Main;
 
 public class RetryPane extends Menu{
 	private ImageView gameOver = new ImageView(ClassLoader.getSystemResource("GameOver.png").toString());
-	private static Button gameStartButton = new Button("Restart");
+	private static Button restartButton = new Button("Restart");
 	private static Button quitButton = new Button("Quit");
 	private Label yourScore,yourScoreString;
 	
 	public RetryPane() {
-		super(gameStartButton,quitButton);
+		super(restartButton,quitButton);
 		this.setPadding(new Insets(10));
 		this.setSpacing(10);
 		this.setAlignment(Pos.CENTER);
@@ -33,11 +33,11 @@ public class RetryPane extends Menu{
 		this.yourScoreString.setTextFill(Color.WHITE);
 		this.yourScore.setTextFill(Color.WHITE);
 		
-		gameStartButton.setFont(Font.loadFont(ClassLoader.getSystemResource("KenneyPixelSquare.ttf").toString(), 30));
+		restartButton.setFont(Font.loadFont(ClassLoader.getSystemResource("KenneyPixelSquare.ttf").toString(), 30));
 		quitButton.setFont(Font.loadFont(ClassLoader.getSystemResource("KenneyPixelSquare.ttf").toString(), 30));
 		this.setPrefSize(300, 30);
-		this.getChildren().addAll(gameOver,yourScoreString,yourScore,gameStartButton,quitButton);
-		gameStartButton.setPrefSize(200, 30);
+		this.getChildren().addAll(gameOver,yourScoreString,yourScore,restartButton,quitButton);
+		restartButton.setPrefSize(200, 30);
 		quitButton.setPrefSize(200, 30);
 	}
 	public ImageView getGameOver() {
@@ -48,7 +48,7 @@ public class RetryPane extends Menu{
 		this.yourScore.setText(String.format("%05d", score));
 	}
 	public Button getGameStartButton() {
-		return gameStartButton;
+		return restartButton;
 	}
 	public Button getQuitButton() {
 		return quitButton;

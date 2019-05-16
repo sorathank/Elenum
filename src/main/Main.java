@@ -23,6 +23,8 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -52,15 +54,17 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		HBox playPane = new HBox();
 		playPane.setPrefSize(1280, 720);
-		playPane.setSpacing(10);
-		playPane.setPadding(new Insets(10));
 
 		ImageView logo = new ImageView(new Image(ClassLoader.getSystemResource("Logo2CP2048.png").toString()));
-		Image background = new Image(ClassLoader.getSystemResource("background.png").toString());
-		Image forestBackGround = new Image(ClassLoader.getSystemResource("backgroundForest.png").toString());
-		
-		playPane.setBackground(new Background(new BackgroundImage(forestBackGround, null, null, null, null)));
+		Image fallBackgroundImage = new Image(ClassLoader.getSystemResource("background.png").toString());
+		Image forestBackgroundImage = new Image(ClassLoader.getSystemResource("backgroundForest.png").toString());
 
+		BackgroundImage fallBackground = new BackgroundImage(fallBackgroundImage, BackgroundRepeat.NO_REPEAT,
+				BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, null);
+		BackgroundImage forestBackground = new BackgroundImage(forestBackgroundImage, BackgroundRepeat.NO_REPEAT,
+				BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, null);
+
+		playPane.setBackground(new Background(forestBackground));
 		createGameMaterial();
 
 		EventManager eventManager = new EventManager(controlPart, boardPane1, boardPane2, startPane, retryPane,
@@ -101,22 +105,22 @@ public class Main extends Application {
 		playPane.getChildren().addAll(numPane, dataPane, numPane2);
 
 		Scene playScene = new Scene(playPane);
-		
+
 		HBox start = new HBox();
 		start.setPrefSize(1280, 720);
-		start.setBackground(new Background(new BackgroundImage(background, null, null, null, null)));
+		start.setBackground(new Background(fallBackground));
 		start.setSpacing(10);
 		start.setPadding(new Insets(10));
 		start.setAlignment(Pos.CENTER);
 		start.getChildren().add(startPane);
 		Scene startScene = new Scene(start);
 		Scene retryScene = new Scene(retry);
-		
+
 		primaryStage.setScene(startScene);
 		primaryStage.setTitle("CP2048");
 		primaryStage.show();
 
-		eventManager.setUpAllButton(playScene,startScene,dataPane,scorePane,retryScene);
+		eventManager.setUpAllButton(playScene, startScene, dataPane, scorePane, retryScene);
 	}
 
 	public void createGameMaterial() {
