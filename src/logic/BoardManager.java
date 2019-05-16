@@ -350,18 +350,6 @@ public class BoardManager {
 		}
 	}
 
-	public void setButtonEvent(ArrowButton button) {
-
-		button.setOnAction(new EventHandler<ActionEvent>() {
-
-			@Override
-			public void handle(ActionEvent arg0) {
-				// TODO Auto-generated method stub
-
-			}
-		});
-	}
-
 	public void generateNewTile() {
 		ArrayList<Location> emptyBoxList = new ArrayList<Location>();
 		for (ArrayList<Location> eachColumn : boardPane.getColumnList()) {
